@@ -20,10 +20,11 @@ Ingredient.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+
         recipe_ingredient_id: {
             type: DataTypes.INTEGER,
             //not sure if this should be false or true
-            allowNull: false,
+            allowNull: true,
             references: { model: 'recipe_ingredient', key: 'id' },
         }
     },
