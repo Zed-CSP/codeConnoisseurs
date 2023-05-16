@@ -23,7 +23,7 @@ Recipe_Ingredient.init(
             defaultValue: 1,
         },
 
-        measurement: {
+        measurement_unit: {
             type: DataTypes.STRING,
             allowNull: true,
         }
