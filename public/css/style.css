@@ -5,13 +5,20 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
 
 :root {
-    --green: rgb(107, 218, 107);
-    --orange: rgb(252, 127, 43);
-    --dark-green: rgb(47, 153, 43);
-    --dark-orange: rgb(230, 112, 34);
+    --green: #9ed26dff;
+    --orange: #ff9900ff;
+    --dark-green: #38761dff;
+    --dark-orange: #ff7804;
 
     --header-font: 'Pacifico', cursive;
     --h1-font: 'Lobster', cursive; 
     --p-font: Arial, sans-serif;
+}
 
+#title {
+    color: var(--dark-orange);
+}
+
+h1 {
+    color: var(--dark-green);
 }
