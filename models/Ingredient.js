@@ -20,6 +20,7 @@ Ingredient.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+      
         ingredient_reference_id: {
             type: DataTypes.INTEGER,
             //not sure if this should be false or true
