@@ -13,8 +13,7 @@ Recipe.init(
         id: {
             type: DataTypes.UUID,
             allowNull: false,
-            primaryKey: true,
-            
+            primaryKey: true,          
         },
 
         name: {
@@ -31,11 +30,11 @@ Recipe.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        recipe_ingredient_id: {
+        recipe_reference_id: {
             type: DataTypes.INTEGER,
             //not sure if this should be false or true
             allowNull: false,
-            references: { model: 'recipe_ingredient', key: 'id' }
+            references: { model: 'recipe_ingredient', key: 'recipe_reference_id' }
         }
     },
     {
