@@ -46,4 +46,4 @@ Recipe.init(
     }
 );
 
-module.exports = Ingredient;
+module.exports = Recipe;
