@@ -1,5 +1,9 @@
 const router = require('express').Router();
 const { Recipe } = require('../../models');
+const router = require('express').Router();
+
+router.get('/', (req, res) => {
+});
 
 router.post('/', async (req,res) => {
     try {
@@ -9,3 +13,4 @@ router.post('/', async (req,res) => {
         res.status(400).json(err);
     }   
 })
+module.exports = router;

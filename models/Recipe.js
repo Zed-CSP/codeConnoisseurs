@@ -13,7 +13,8 @@ Recipe.init(
         id: {
             type: DataTypes.UUID,
             allowNull: false,
-            primaryKey: true,          
+            primaryKey: true,
+            
         },
 
         name: {
