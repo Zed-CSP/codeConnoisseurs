@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { Recipe } = require('../../models');
-const router = require('express').Router();
 
 router.get('/', (req, res) => {
 });
