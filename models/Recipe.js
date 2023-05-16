@@ -13,7 +13,8 @@ Recipe.init(
         id: {
             type: DataTypes.UUID,
             allowNull: false,
-            primaryKey: true,          
+            primaryKey: true,
+            
         },
 
         name: {
@@ -46,4 +47,4 @@ Recipe.init(
     }
 );
 
-module.exports = Ingredient;
+module.exports = Recipe;
