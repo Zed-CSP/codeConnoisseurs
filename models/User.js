@@ -35,12 +35,6 @@ User.init(
         password: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-
-        recipe_id: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            references: { model: 'recipe', key: 'id' }
         }
     },
     {
