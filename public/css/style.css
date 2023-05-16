@@ -1,0 +1,24 @@
+/* import Pacifico font */
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+/* import Lobster font */
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+
+:root {
+    --green: #9ed26dff;
+    --orange: #ff9900ff;
+    --dark-green: #38761dff;
+    --dark-orange: #ff7804;
+
+    --header-font: 'Pacifico', cursive;
+    --h1-font: 'Lobster', cursive; 
+    --p-font: Arial, sans-serif;
+}
+
+#title {
+    color: var(--dark-orange);
+}
+
+h1 {
+    color: var(--dark-green);
+}
