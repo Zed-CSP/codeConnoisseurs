@@ -17,8 +17,17 @@
 
 #title {
     color: var(--dark-orange);
+    font-family: var(--header-font);
 }
 
 h1 {
     color: var(--dark-green);
+    font-family: var(--h1-font);
+}
+
+button {
+    background-color: var(--orange);
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
