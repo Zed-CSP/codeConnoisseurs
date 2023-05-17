@@ -1,13 +1,27 @@
-//import models
 const User = require('./User');
 const Recipe = require('./Recipe');
 const Ingredient = require('./Ingredient');
+const Recipe_Ingredient = require('./Recipe_Ingredient');
 
+User.hasMany(Recipe, {
+    foreignKey: 'creator_id',
+});
 
-// User has many Recipes
-User.hasMany(Recipe);
-Recipe.belongsTo(User);
+Recipe.belongsTo(User, {
+    foreignKey: 'creator_id',
+});
 
-//Recipe has many Ingredients through Recipe_Ingredient
-Recipe.belongsToMany(Ingredient, { through: 'Recipe_Ingredient', sourceKey: 'recipe_reference_id', targetKey:'ingredient_reference_id'});
-Ingredient.belongsToMany(Recipe, { through: 'Recipe_Ingredient', sourceKey: 'ingredient_reference_id', targetKey:'recipe_reference_id'});
+Recipe.belongsToMany(Ingredient, {
+    through: Recipe_Ingredient,
+});
+
+Ingredient.belongsToMany(Recipe, {
+    through: Recipe_Ingredient,
+});
+
+module.exports = {
+    User,
+    Recipe,
+    Ingredient,
+    Recipe_Ingredient,
+};
