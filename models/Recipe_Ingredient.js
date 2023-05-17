@@ -12,21 +12,34 @@ Recipe_Ingredient.init(
         //define columns
         id: {
             type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
             allowNull: false,
             primaryKey: true,
-            
         },
-
         amount: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.DECIMAL,
             allowNull: false,
             defaultValue: 1,
         },
-
         measurement_unit: {
             type: DataTypes.STRING,
-            allowNull: true,
-        }
+        },
+        recipe_id: {
+            type: DataTypes.UUID,
+            allowNull: false,
+            references: {
+                model: 'recipe',
+                key: 'id',
+            },
+        },
+        ingredient_id: {
+            type: DataTypes.UUID,
+            allowNull: false,
+            references: {
+                model: 'ingredient',
+                key: 'id',
+            },
+        },
     },
     {
         sequelize,
