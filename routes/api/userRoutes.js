@@ -43,4 +43,39 @@ router.post('/logout', (req, res) => {
   }
 });
 
+router.post('/signup', async (req, res) => {
+  try {
+    let userData = await User.findOne({ where: { email: req.body.email } });
+
+    if (userData) {
+      res
+        .status(400)
+        .json({ message: 'This email has already been used' });
+      return;
+    }
+    if(!req.body.email || !req.body.password) {
+      res
+        .status(400)
+        .json({ message: 'Please fill out all fields. I am just a computer...' });
+      return;
+    }
+
+    userData = await User.create({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      password: req.body.password,
+    });
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      
+      res.status(200).json({ user: userData, message: 'You are now logged in!' });
+    });
+    
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
 module.exports = router;
