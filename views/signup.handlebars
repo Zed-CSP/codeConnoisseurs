@@ -1,11 +1,37 @@
-<main>
-    <h1>Create your account</h1>
+<main class="col vh-100 bg-image2 d-flex justify-content-center align-items-center">
+  <div class="green-box">
+    <h1 class="text-center">Create your account</h1>
     <form>
-        <input id="firstName" type="text" name="firstName" placeholder="First name" required />
-        <input id="lastName" type="text" name="lastName" placeholder="Last name" required />
-        <input id="email" type="text" name="email" placeholder="Email address" required />
-        <input id="password" type="text" name="password" placeholder="Password" minlength="8" required />
-        <label for="password">Password must be at least 8 characters</label>
-        <button>Submit</button>
+      <div class="row justify-content-center">
+        <div class="col-8 col-sm-4 mg-custom">
+          <input class="form-control" id="firstName" type="text" name="firstName" placeholder="First name" required>
+        </div>
+        <div class="col-8 col-sm-4 mg-custom">
+          <input class="form-control" id="lastName" type="text" name="lastName" placeholder="Last name" required>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-10 col-sm-8 mg-custom">
+          <input class="form-control" id="email" type="text" name="email" placeholder="Email address" required>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-10 col-sm-8 mg-custom">
+          <input class="form-control" id="password" type="text" name="password" placeholder="Password" minlength="8" required>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-10 col-sm-8 text-center">
+          <label for="password">Password must be at least 8 characters</label>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-10 col-sm-8 text-center">
+          <button>Submit</button>
+        </div>
+      </div>
     </form>
+  </div>
 </main>
+
+

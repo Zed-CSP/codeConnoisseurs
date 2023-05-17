@@ -10,7 +10,7 @@
     --dark-green: #38761dff;
     --dark-orange: #ff7804;
     --trans-green: rgb(217, 234, 211, 0.88);
-    --shadow-box: 0 5px 5px rgba(0, 0, 0, 0.2);
+    --shadow-box: 0 10px 10px rgba(0, 0, 0, 0.2);
 
     --header-font: 'Pacifico', cursive;
     --h1-font: 'Lobster', cursive; 
@@ -21,6 +21,9 @@
 #title {
     color: var(--dark-orange);
     font-family: var(--header-font);
+    font-size: 70px;
+    font-weight: bold;
+    margin: 10px 0 20px 10px;
 }
 
 h1 {
@@ -32,34 +35,38 @@ button {
     background-color: var(--orange);
     color: white;
     border: 2px solid var(--dark-orange);
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: var(--shadow-box);
-    padding: 3px 10px;
+    padding: 3px 20px;
 }
 
 button:hover {
     background-color: var(--dark-orange);
     color: rgb(143, 143, 143);
     border: 2px solid var(--orange);
-    border-radius: 5px;
-    box-shadow: var(--shadow-box);   
+    border-radius: 10px;
+    box-shadow: var(--shadow-box);  
+    padding: 3px 20px;
+
 }
 
 #intro {
     border-top: 5px solid var(--dark-green);
     color: white;
+    padding-top: 20px;
 }
 
 header {
     background-color: var(--green);
 }
 
-#log-in {
+.green-box {
     /*border and background*/
     background-color: var(--trans-green);
     border: 1px solid #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 35px;
+    box-shadow: var(--shadow-box);
+    padding: 40px 40px 40px 40px;
 }
 
 .vh-100 {
@@ -67,14 +74,36 @@ header {
   }
 
 .bg-image1 {
-    /*background image*/
     background-image: url('../images/background1.png');
-    background-size: cover;
-    background-position: center; 
 }
 
-#username, #password {
+.bg-image2 {
+    background-image: url('../images/background2.png');
+}
+
+.bg-image1, .bg-image2 {
+    background-size: cover;
+    background-position: center;
+}
+
+input {
     border: none;
-    border-radius: 15px;
+    border-radius: 13px;
     box-shadow: var(--shadow-box);
+    margin: 20px 30px 20px 30px;
+    width: 350px;
+}
+
+.orange-el {
+    color: var(--dark-orange);
+    margin-top: 5px;
+}
+
+.orange-el:hover {
+    color: var(--orange);
+    margin-top: 5px;
+}
+
+.mg-custom {
+    margin-right: 5px;
 }
