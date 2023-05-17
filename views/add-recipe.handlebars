@@ -8,8 +8,8 @@
     <fieldset id="ingredient-data1">
         <label for="ingredient1">Ingredient:</label>
         <select name="ingredient1" id="ingredient1">
-            {{#each ingredients}}
-                <option value="{{this}}">{{this}}</option>
+            {{#each ingredients as |ingredient|}}
+                <option value="{{ingredient.name}}">{{ingredient.name}}</option>
             {{/each}}
         </select>
         <label for="quantity1">Quantity:</label>

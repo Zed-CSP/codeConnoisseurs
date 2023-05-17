@@ -15,8 +15,8 @@ addRecipeForm.addEventListener('click', 'add-btn', async (event) => {
         <fieldset id="${ingredientDataId}">
             <label for="${ingredientNameId}">Ingredient:</label>
             <select name="${ingredientNameId}" id="${ingredientNameId}">
-                {{#each ingredients}}
-                    <option value="{{this}}">{{this}}</option>
+                {{#each ingredients as |ingredient|}}
+                    <option value="{{ingredient.name}}">{{ingredient.name}}</option>
                 {{/each}}
             </select>
             <label for="${quantityId}">Quantity:</label>

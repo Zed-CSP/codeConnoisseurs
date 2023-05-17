@@ -20,21 +20,16 @@ router.get('/signup', (req, res) => {
 // Render page to add new recipe
 router.get('/recipe/add', async (req, res) => {
     try {
-        const ingredientsData = await Ingredient.findAll();
-        let ingredients = ingredientsData.map(ingredient => ingredient.get({ plain: true }));
+        const ingredientsData = await Ingredient.findAll({
+            order: [
+                ['name', 'ASC'],
+            ],
+        });
+        const ingredients = ingredientsData.map(ingredient => ingredient.get({ plain: true }));
 
-        if (ingredients.length === 0) {
-            ingredients = [
-                'apple',
-                'banana',
-                'jellybean',
-                'potato',
-                'tomato',
-            ]
-        }
-       
         res.render('add-recipe', { 
-            ingredients
+            ingredients,
+            showNav: true,
         });
     } catch (error) {
         res.status(500).json({ error });

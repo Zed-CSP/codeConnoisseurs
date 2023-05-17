@@ -1,16 +1,25 @@
-<div class="row custom-row">
+<div class="row">
     <header class="col vh-100">
-    <h1 class="fs-1" id="title">Kitchen Alchemy</h1>
-    <p id="intro">Kitchen Alchemy is where you can submit your own recipes, or see what you can cook with what you have in your pantry.</p>
+        <div class="m-5">
+            <h1 id="title">Kitchen</h1>
+            <h1 id="title">Alchemy</h1>
+        </div>
+        
+        <p class="m-5" id="intro">Kitchen Alchemy is where you can submit your own recipes, or see what you can cook with what you have in your pantry.</p>
     </header>
 
-    <main class="col my-col vh-100" id="log-in">
-        <h2>Log In</h2>
-        <form>
-            <input id="username" type="text" name="username" placeholder="Username" required />
-            <input id="password" type="text" name="password" placeholder="Password" minlength="8" required />
-            <button>Log In</button>
-            <a href="/signup">Create a new account</a>
-        </form>
+    <main class="col vh-100 bg-image1 d-flex justify-content-center align-items-center" >
+        <div class="green-box" id="log-in">
+            <form>
+                <input class= "row" id="username" type="text" name="username" placeholder="Username" required />
+                <input class= "row" id="password" type="text" name="password" placeholder="Password" minlength="8" required />
+                <div class="row justify-content-center">
+                    <div class="col text-center">
+                        <button >Log In</button>
+                    </div>
+                </div>
+                <a class= "row justify-content-center orange-el" href="/signup">Create a new account</a>
+            </form>
+        </div>
     </main>
 </div>
