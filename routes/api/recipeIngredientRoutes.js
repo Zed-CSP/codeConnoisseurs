@@ -11,6 +11,15 @@ router.post('/', async (req,res) => {
     }   
 })
 
+router.get('/', async (req, res) => {
+    try {
+        const recIngData = await Recipe_Ingredient.findAll();
+        res.status(200).json(recIngData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 
 module.exports = router;
 
