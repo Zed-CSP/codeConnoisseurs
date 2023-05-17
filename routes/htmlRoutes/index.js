@@ -28,7 +28,8 @@ router.get('/recipe/add', async (req, res) => {
         const ingredients = ingredientsData.map(ingredient => ingredient.get({ plain: true }));
 
         res.render('add-recipe', { 
-            ingredients
+            ingredients,
+            showNav: true,
         });
     } catch (error) {
         res.status(500).json({ error });
