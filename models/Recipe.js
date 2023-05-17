@@ -12,35 +12,33 @@ Recipe.init(
         //define columns
         id: {
             type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
             allowNull: false,
             primaryKey: true,
-            
         },
-
         name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-
         description: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-
-        instruction: {
+        instructions: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        recipe_reference_id: {
-            type: DataTypes.INTEGER,
-            //not sure if this should be false or true
-            allowNull: false,
-            references: { model: 'recipe_ingredient', key: 'recipe_reference_id' }
-        }
+        creator_id: {
+            type: DataTypes.UUID,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
+        },
     },
     {
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
         modelName: 'recipe',
