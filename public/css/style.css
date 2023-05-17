@@ -9,6 +9,8 @@
     --orange: #ff9900ff;
     --dark-green: #38761dff;
     --dark-orange: #ff7804;
+    --trans-green: rgb(217, 234, 211, 0.88);
+    --shadow-box: 0 5px 5px rgba(0, 0, 0, 0.2);
 
     --header-font: 'Pacifico', cursive;
     --h1-font: 'Lobster', cursive; 
@@ -31,7 +33,7 @@ button {
     color: white;
     border: 2px solid var(--dark-orange);
     border-radius: 5px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-box);
     padding: 3px 10px;
 }
 
@@ -40,7 +42,7 @@ button:hover {
     color: rgb(143, 143, 143);
     border: 2px solid var(--orange);
     border-radius: 5px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);   
+    box-shadow: var(--shadow-box);   
 }
 
 #intro {
@@ -54,7 +56,7 @@ header {
 
 #log-in {
     /*border and background*/
-    background-color: rgb(158, 210, 109, 0.7);
+    background-color: var(--trans-green);
     border: 1px solid #ffffff;
     border-radius: 10px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
@@ -69,4 +71,10 @@ header {
     background-image: url('../images/background1.png');
     background-size: cover;
     background-position: center; 
+}
+
+#username, #password {
+    border: none;
+    border-radius: 15px;
+    box-shadow: var(--shadow-box);
 }
