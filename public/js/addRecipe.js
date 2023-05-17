@@ -1,4 +1,4 @@
-addRecipeForm.addEventListener('submit', async (event) => {
+addRecipeForm.addEventListener('click', 'submit-btn', async (event) => {
     event.preventDefault();
     const addRecipeForm = document.getElementById("add-recipe-form");
     const formData = new FormData(addRecipeForm);
