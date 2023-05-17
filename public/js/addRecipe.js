@@ -1,5 +1,6 @@
 addRecipeForm.addEventListener('submit', async (event) => {
     event.preventDefault();
+    const addRecipeForm = document.getElementById("add-recipe-form");
     const formData = new FormData(addRecipeForm);
     const recipeName = formData.get('name');
     const description = formData.get('description');
@@ -12,7 +13,7 @@ addRecipeForm.addEventListener('submit', async (event) => {
     const recIngBody = {ingredientQuantity, ingredientUnit}
 
     try {
-      const res = await fetch('/api/recipeRoutes', {
+      const res = await fetch('/api/recipe', {
         method: 'POST',
         body: JSON.stringify(recipeBody),
         headers: {'Content-Type': 'application/json'},
@@ -23,7 +24,7 @@ addRecipeForm.addEventListener('submit', async (event) => {
       console.error(error);
       };
     try { //adjust this in order to use ingredient name to get UUID to populate the recipe_ingredient table
-      const res = await fetch('/api/ingredientRoutes/', {
+      const res = await fetch('/api/ingredients/', {
         method: 'POST',
         body: JSON.stringify(ingredientBody),
         headers: {'Content-Type': 'application/json'},
@@ -34,7 +35,7 @@ addRecipeForm.addEventListener('submit', async (event) => {
       console.error(error);
     };
     try {
-      const res = await fetch('/api/recipeIngredientRoutes', {
+      const res = await fetch('/api/recipeingredient', {
         method: 'POST',
         body: JSON.stringify(recIngBody),
         headers: {'Content-Type': 'application/json'},
