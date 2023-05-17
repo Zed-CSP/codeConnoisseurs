@@ -5,12 +5,13 @@
     <input id="name" type="text" name="name" placeholder="Name" required/>
     <label for="description">Description:</label>
     <textarea id="description" name="description" rows="3" placeholder="Enter the description here" required></textarea>
-    <fieldset>
-        <datalist id="ingredient1">
-            {{#each ingredient}}
-                <option value="{{ingredient}}"></option>
+    <fieldset id="ingredient-data">
+        <label for="ingredient1">Ingredient:</label>
+        <select name="ingredient1" id="ingredient1">
+            {{#each ingredients}}
+                <option value="{{this}}">{{this}}</option>
             {{/each}}
-        </datalist>
+        </select>
         <label for="quantity1">Quantity:</label>
         <input id="quantity1" type="text" name="quantity1" placeholder="Quantity" required/>
         <label for="unit1">Unit:</label>
