@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
 
 :root {
-    --green: #9ed26dff;
+    --green: rgb(158, 210, 109);
     --orange: #ff9900ff;
     --dark-green: #38761dff;
     --dark-orange: #ff7804;
@@ -45,8 +45,22 @@ button:hover {
 
 #intro {
     border-top: 5px solid var(--dark-green);
+    color: white;
 }
 
 header {
     background-color: var(--green);
+}
+
+.my-col {
+    /*background image*/
+   /* background-image: url('../images/background1.png');
+    background-size: cover;
+    background-position: center; */
+
+    /*border and background*/
+    background-color: rgb(158, 210, 109, 0.5);
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
