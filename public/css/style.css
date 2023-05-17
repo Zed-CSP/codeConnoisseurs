@@ -15,6 +15,7 @@
     --p-font: Arial, sans-serif;
 }
 
+/*title is Kitchen Alchemy*/
 #title {
     color: var(--dark-orange);
     font-family: var(--header-font);
@@ -39,6 +40,13 @@ button:hover {
     color: rgb(143, 143, 143);
     border: 2px solid var(--orange);
     border-radius: 5px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-    
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);   
+}
+
+#intro {
+    border-top: 5px solid var(--dark-green);
+}
+
+header {
+    background-color: var(--green);
 }
