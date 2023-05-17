@@ -8,9 +8,9 @@ const recipeIngredientRoutes = require('./recipeIngredientRoutes');
 //so this is currently at /api 
 router.use('/users', userRoutes);
 
-router.use('/recipes', require(recipeRoutes));
-router.use('/ingredients', require(ingredientRoutes));
-router.use('/recipeingredients', require(recipeIngredientRoutes));
+router.use('/recipe', recipeRoutes);
+router.use('/ingredients', ingredientRoutes);
+router.use('/recipeingredient', recipeIngredientRoutes);
 
 
 module.exports = router;
