@@ -13,13 +13,30 @@
                 <option value="{{ingredient.name}}"></option>
             {{/each}}
         </datalist>
-        <label for="quantity1">Quantity:</label>
-        <input id="quantity1" type="text" name="quantity1" placeholder="Quantity" required/>
+        <label for="amount1">Amount:</label>
+        <input id="amount1" type="text" name="amount1" placeholder="Amount" required/>
         <label for="unit1">Unit:</label>
-        <input id="unit1" type="text" name="unit1" placeholder="Unit" required/>
+        <input id="unit1" type="text" name="unit1" placeholder="Unit"/>
     </fieldset>
     <button id="add-btn">+</button>
     <label for="instructions">Instructions:</label>
     <textarea id="instructions" name="instructions" rows="10" placeholder="Enter instructions here" required></textarea>
     <button id="submit-btn">Submit Recipe</button>
 </form>
+
+<div class="modal" id="success-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Success!</h5>
+      </div>
+      <div class="modal-body">
+        <p>Your recipe has been posted.</p>
+        <a href="/recipe/mine">View My Recipes</a>
+        <a href="/home">View All Recipes</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/addRecipe.js"></script>
