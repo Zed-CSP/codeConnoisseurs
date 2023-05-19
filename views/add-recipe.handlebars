@@ -1,25 +1,43 @@
-<h1>Add New Recipe</h1>
+<div class="row">
+    <div class="col vh-100 bg-image3 d-flex justify-content-center align-items-center">
+        <div class="green-box"> 
+            <h1 class=" row justify-content-center">Add New Recipe</h1>
 
-<form id="add-recipe-form">
-    <label for="name">Name:</label>
-    <input id="name" type="text" name="name" placeholder="Name" required/>
-    <label for="description">Description:</label>
-    <textarea id="description" name="description" rows="3" placeholder="Enter the description here" required></textarea>
-    <fieldset id="ingredient-data1">
-        <label for="ingredient1" class="form-label">Ingredient:</label>
-        <input class="form-control" list="datalistOptions" id="ingredient1" placeholder="Type to search...">
-        <datalist id="datalistOptions">
-            {{#each ingredients as |ingredient|}}
-                <option value="{{ingredient.name}}"></option>
-            {{/each}}
-        </datalist>
-        <label for="quantity1">Quantity:</label>
-        <input id="quantity1" type="text" name="quantity1" placeholder="Quantity" required/>
-        <label for="unit1">Unit:</label>
-        <input id="unit1" type="text" name="unit1" placeholder="Unit" required/>
-    </fieldset>
-    <button id="add-btn">+</button>
-    <label for="instructions">Instructions:</label>
-    <textarea id="instructions" name="instructions" rows="10" placeholder="Enter instructions here" required></textarea>
-    <button id="submit-btn">Submit Recipe</button>
-</form>
+            <form class="row" id="add-recipe-form">
+                <label for="name">Name:</label>
+                <input class="form-control" id="name" type="text" name="name" placeholder="Name" required/>
+                <label for="description">Description:</label>
+                <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter the description here" required></textarea>
+
+                <fieldset id="ingredient-data1">
+                    <label for="ingredient1" class="form-label">Ingredient:</label>
+                    <input class="form-control" list="datalistOptions" id="ingredient1" placeholder="Type to search ingredient...">
+                    <datalist id="datalistOptions">
+                        {{#each ingredients as |ingredient|}}
+                            <option value="{{ingredient.name}}"></option>
+                        {{/each}}
+                    </datalist>
+                    <div>
+                        <input class="form-control" id="quantity1" type="text" name="quantity1" placeholder="Quantity" required/>
+                        <input class="form-control" id="unit1" type="text" name="unit1" placeholder="Unit" required/>
+                    </div>
+
+                </fieldset>
+                <div>
+                   <div class="d-inline">
+                     <button class="col"id="submit">+</button>
+                    </div>
+                    <p class="d-inline orange-el">Add ingredient</p>
+                 </div>
+                <label for="instructions">Instructions:</label>
+                <textarea class="form-control" id="instructions" name="instructions" rows="10" placeholder="Enter instructions here" required></textarea>
+                <div class="row justify-content-center">
+                   <div class="col-10 col-sm-8  m-4 text-center">
+                     <button id="submit-btn">Submit Recipe</button>
+                   </div>
+                 </div>
+            </form>
+        </div>
+    </div>
+</div>
+

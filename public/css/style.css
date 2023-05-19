@@ -81,7 +81,10 @@ header {
     background-image: url('../images/background2.png');
 }
 
-.bg-image1, .bg-image2 {
+.bg-image3 {
+    background-image: url('../images/background3.png');
+}
+.bg-image1, .bg-image2, .bg-image3 {
     background-size: cover;
     background-position: center;
 }
