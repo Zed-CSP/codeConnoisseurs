@@ -107,3 +107,7 @@ input {
 .mg-custom {
     margin-right: 5px;
 }
+
+nav {
+    background-color: var(--dark-green);
+}
