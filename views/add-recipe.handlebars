@@ -1,41 +1,75 @@
 <div class="row">
-    <div class="col vh-100 bg-image3 d-flex justify-content-center align-items-center">
+    <div class="col vh-200 bg-image3 d-flex justify-content-center align-items-center">
         <div class="green-box"> 
-            <h1 class=" row justify-content-center">Add New Recipe</h1>
-
-            <form class="row" id="add-recipe-form">
-                <label for="name">Name:</label>
-                <input class="form-control" id="name" type="text" name="name" placeholder="Name" required/>
-                <label for="description">Description:</label>
-                <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter the description here" required></textarea>
-
-                <fieldset id="ingredient-data1">
-                    <label for="ingredient1" class="form-label">Ingredient:</label>
-                    <input class="form-control" list="datalistOptions" id="ingredient1" placeholder="Type to search ingredient...">
-                    <datalist id="datalistOptions">
-                        {{#each ingredients as |ingredient|}}
-                            <option value="{{ingredient.name}}"></option>
-                        {{/each}}
-                    </datalist>
-                    <div>
-                        <input class="form-control" id="quantity1" type="text" name="quantity1" placeholder="Quantity" required/>
-                        <input class="form-control" id="unit1" type="text" name="unit1" placeholder="Unit" required/>
+            <h1 class="text-center">Add New Recipe</h1>
+            <form id="add-recipe-form">
+                
+                <!-- Ingredient name -->
+                <div class="row">
+                    <div class="col-11">
+                        <label for="name">Name:</label>
+                        <input class="form-control" id="name" type="text" name="name" placeholder="Name" required/>
                     </div>
+                </div>
 
-                </fieldset>
-                <div>
+                <!-- Description -->
+                <div class="row justify-content-center">
+                    <div class="col-11">
+                        <label for="description">Description:</label>
+                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter the description here" required></textarea>
+                    </div>
+                </div>
+
+                <!-- Ingredient details -->
+                <div class="row justify-content-center">
+                    <div class="col-11">
+                        <fieldset id="ingredient-data1">
+                            <label for="ingredient1" class="form-label">Ingredient:</label>
+                            <div class="row">
+                                <div class="col-11">
+                                    <input class="form-control" list="datalistOptions" id="ingredient1" placeholder="Type to search ingredient...">
+                                </div>
+                            </div>
+                            <datalist id="datalistOptions">
+                                {{#each ingredients as |ingredient|}}
+                                    <option value="{{ingredient.name}}"></option>
+                                {{/each}}
+                            </datalist>
+                            <div class="row">
+                                <div class="col-6 col-sm-4">
+                                    <input class="form-control" id="quantity1" type="text" name="quantity1" placeholder="Quantity" required/>  
+                                </div>
+                                <div class="col-6 col-sm-4">
+                                    <input class="form-control" id="unit1" type="text" name="unit1" placeholder="Unit" required/>
+                                </div>
+                                
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <!-- Add ingredient button-->
+                <div class="m-4">
                    <div class="d-inline">
-                     <button class="col"id="add-btn">+</button>
+                        <button class="col"id="add-btn">+</button>
                     </div>
                     <p class="d-inline orange-el">Add ingredient</p>
-                 </div>
-                <label for="instructions">Instructions:</label>
-                <textarea class="form-control" id="instructions" name="instructions" rows="10" placeholder="Enter instructions here" required></textarea>
+                </div>
+
+                <!-- Instruction -->
+                <div class="row justify-content-center">
+                    <div class="col-11">
+                        <label for="instructions">Instructions:</label>
+                    <textarea class="form-control" id="instructions" name="instructions" rows="10" placeholder="Enter instructions here" required></textarea>
+                    </div>
+                </div>
+
+                <!-- Submit button -->                  
                 <div class="row justify-content-center">
                    <div class="col-10 col-sm-8  m-4 text-center">
                      <button id="submit-btn">Submit Recipe</button>
                    </div>
-                 </div>
+                </div>
             </form>
         </div>
     </div>
