@@ -61,6 +61,7 @@ router.post('/logout', (req, res) => {
 
 router.post('/signup', async (req, res) => {
   try {
+    console.log(req.body);
     let userData = await User.findOne({ where: { email: req.body.email } });
 
     if (userData) {
