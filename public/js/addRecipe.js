@@ -29,6 +29,18 @@ addRecipeForm.addEventListener('submit', async (event) => {
   };
 
   try {
+    // Get information about logged in user
+    const userResponse = await fetch('/api/users/loggedin');
+
+    // If user is not logged in, send to login page
+    if (!userResponse.ok) {
+        location.href = '/login';
+        return;
+    }
+
+    // Add creator id to body object
+    recipeBody.creatorId = await userResponse.json();
+
     // POST request to add recipe
     const response = await fetch('/api/recipe', {
       method: 'POST',

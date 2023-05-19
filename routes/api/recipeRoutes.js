@@ -12,11 +12,20 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req,res) => {
     try {
+        // Get creator id
+        const creator_id = req.body.creatorId;
         // Create recipe
-        const newRecipe = await Recipe.create(req.body);
+        const newRecipe = await Recipe.create({ 
+            ...req.body, 
+            creator_id 
+        });
 
         // Get ingredient data from name
-        const ingredientData = await Ingredient.findAll({ where: { name: req.body.ingredientName } });
+        const ingredientData = await Ingredient.findAll({ 
+            where: { 
+                name: req.body.ingredientName 
+            } 
+        });
         const ingredient = ingredientData.map(ingredient => ingredient.get({ plain: true }));
 
         // Get data needed to create recipe_ingredient
@@ -32,9 +41,10 @@ router.post('/', async (req,res) => {
             ingredient_id
         });
 
-        res.status(200).json({message: 'Your recipe has been added!'});
+        res.status(200).json({ message: 'Your recipe has been added!' });
     } catch (err) {
         res.status(500).json(err);
     }   
-})
+});
+
 module.exports = router;
