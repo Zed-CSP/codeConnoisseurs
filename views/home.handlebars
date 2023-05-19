@@ -1,18 +1,16 @@
 
 <header><!--header or div in nested handlebars?-->
-    <h1>Welcome {{user}}</h1> <!--'user' greeting? could also be done in main.handlebars with an accompanying 'hide' class for other pages in a jas file? im undecided-->
+    {{!-- <h1>Welcome {{user}}</h1> <!--'user' greeting? could also be done in main.handlebars with an accompanying 'hide' class for other pages in a jas file? im undecided--> --}}
 </header>
 
     <section class="feed"> <!--section or div?-->
-    {{#each posts}}
+    {{#each recipes as |recipe|}}
         <div class="post-card"> <!--recipe feed cards-->
-            <h2>{{title}}</h2>
-            <p>{{content}}</p>
-            <p class="author">By: {{author}}</p> <!--'author' is naming convention to differentiate between current user and author of recipe-->
+            <h2>{{recipe.name}}</h2>
+            <p>{{recipe.description}}</p>
+            <p class="author">By: {{recipe.user.first_name}} {{recipe.user.last_name}}</p> <!--'author' is naming convention to differentiate between current user and author of recipe-->
         </div>
-      {{/each}}
+    {{/each}}
     </section>
 
-<script src="home.js"></script>
-
-<!-- RILEY The {{#each}} block will iterates over each post in the posts array and generate the cards. The post's title, content, and author properties are intended to be inserted into the elements using the Handlebars template tags: ({{title}}, {{content}}, {{author}})-->
+{{!-- <script src="home.js"></script> --}}
