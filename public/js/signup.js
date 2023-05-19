@@ -1,9 +1,12 @@
 signUpForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
-    const username = formData.get('username');
+    const first_name = formData.get('firstName');
+    const last_name = formData.get('lastName');
+    const email = formData.get('email');
     const password = formData.get('password');
-    const body = {username, password};
+    const body = {first_name, last_name, email, password};
+
     try {
       const res = await fetch('/api/users/signup', {
         method: 'POST',
