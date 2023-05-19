@@ -3,7 +3,7 @@ const { Ingredient } = require('../../models');
 
 router.get('/', (req, res) => {
     try {
-        res.render('home');
+        res.render('login');
     } catch (error) {
         res.status(500).json({ error });
     }
