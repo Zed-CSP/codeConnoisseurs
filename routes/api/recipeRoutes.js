@@ -10,6 +10,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// POST /api/recipe (add recipe to db)
 router.post('/', async (req,res) => {
     try {
         // Get creator id
@@ -20,25 +21,27 @@ router.post('/', async (req,res) => {
             creator_id 
         });
 
-        // Get ingredient data from name
-        const ingredientData = await Ingredient.findAll({ 
-            where: { 
-                name: req.body.ingredientName 
-            } 
+        // Get each ingredient id from name and add to ingredient object
+        const ingredientsArr = req.body.ingredientsArr.map(async (ingredient) => {
+            const ingredientData = await Ingredient.findOne({ where: { name: ingredient.name }});
+            const ingredientPlain = ingredientData.get({ plain: true });
+            ingredient.id = ingredientPlain.id;
+            return ingredient;
         });
-        const ingredient = ingredientData.map(ingredient => ingredient.get({ plain: true }));
 
-        // Get data needed to create recipe_ingredient
-        const amount = req.body.ingredientAmount;
-        const measurement_unit = req.body.ingredientUnit;
-        const recipe_id = newRecipe.id;
-        const ingredient_id = ingredient[0].id;
-        // Create recipe_ingredient
-        const newRecIng = await Recipe_Ingredient.create({
-            amount, 
-            measurement_unit, 
-            recipe_id, 
-            ingredient_id
+        // Wait for all promises to resolve
+        Promise.all(ingredientsArr)
+            // Then use each response to create each recipe_ingredient
+            .then(responses => {
+                responses.forEach(async (ingredient) => {
+                    const ingredientObj = {
+                        amount: ingredient.amount,
+                        measurement_unit: ingredient.measurement_unit,
+                        recipe_id: newRecipe.id,
+                        ingredient_id: ingredient.id,
+                    }
+                    await Recipe_Ingredient.create(ingredientObj);
+                });
         });
 
         res.status(200).json({ message: 'Your recipe has been added!' });
