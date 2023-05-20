@@ -1,4 +1,4 @@
-const sendWelcomeEmail = require('../../utils/sendmail');
+
 
 document.querySelector('#submit').addEventListener('click', async (e) => {
   e.preventDefault();
@@ -19,7 +19,6 @@ document.querySelector('#submit').addEventListener('click', async (e) => {
       const data = await res.json();
       console.log(data);
       if(res.ok) {
-        sendWelcomeEmail(email);
         document.location.replace('/recipe/add');
       } else {
         alert(data.message);
