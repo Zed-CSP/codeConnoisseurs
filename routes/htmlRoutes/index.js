@@ -57,6 +57,28 @@ router.get('/home', async (req, res) => {
     try {
         const recipeData = await Recipe.findAll({
             include: [{model: Ingredient, model: User}],
+            order: [['createdAt', 'DESC']],
+        });
+        const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+
+        res.render('home', { 
+            recipes,
+            showNav: true,
+        });
+    } catch (error) {
+        res.status(500).json({ error });
+    }
+});
+
+
+// Render page to view feed of all Recipes for User
+router.get('/profile', async (req, res) => {
+    try {
+        const userId = req.session.user_id;
+        const recipeData = await Recipe.findAll({
+            include: [{ model: Ingredient, model: User }],
+            where: { creator_id: userId },
+            order: [[ 'createdAt', 'DESC' ]],
         });
         const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
 
