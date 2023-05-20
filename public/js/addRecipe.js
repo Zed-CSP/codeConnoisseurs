@@ -6,15 +6,30 @@ addRecipeForm.addEventListener('submit', async (event) => {
 
   // Get recipe form inputs
   const formData = new FormData(addRecipeForm);
-  const name = formData.get('name');
+  const name = formData.get('recipe-name');
   const description = formData.get('description');
-  const ingredientName = document.getElementById('ingredient1').value;
-  const ingredientAmount = formData.get('amount1');
-  const ingredientUnit = formData.get('unit1');
   const instructions = formData.get('instructions');
   
+  // Get ingredient info
+  // Create array of fieldset elements
+  const fieldsets = document.getElementsByTagName('fieldset');
+  const fieldsetsArr = Array.from(fieldsets);
+  // Create array of ingredient objects
+  const ingredientsArr = fieldsetsArr.map(fieldset => {
+    // Create array of input elements within the fieldset
+    const inputs = fieldset.getElementsByTagName('input');
+    const inputsArr = Array.from(inputs);
+    // Create a property for each input and put them into an object
+    let ingredientObj = {};
+    inputsArr.forEach(input => {
+      ingredientObj[input.name] = input.value;
+    });
+    // Return the object
+    return ingredientObj;
+  });
+
   // If any required fields are missing, alert user
-  if (!name || !description || !instructions || !ingredientName || !ingredientAmount) {
+  if (!name || !description || !instructions || !ingredientsArr) {
     return alert('Please fill in all required fields');
   };
 
@@ -23,9 +38,7 @@ addRecipeForm.addEventListener('submit', async (event) => {
     name,
     description,
     instructions,
-    ingredientName,
-    ingredientAmount,
-    ingredientUnit
+    ingredientsArr,
   };
 
   try {
@@ -34,7 +47,7 @@ addRecipeForm.addEventListener('submit', async (event) => {
 
     // If user is not logged in, send to login page
     if (!userResponse.ok) {
-        location.href = '/login';
+        location.href = '/';
         return;
     }
 

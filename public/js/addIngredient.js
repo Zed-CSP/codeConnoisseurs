@@ -21,7 +21,7 @@ addIngredientBtn.addEventListener('click', async (event) => {
         <label for="${ingredientNameId}" class="form-label">Ingredient:</label>
         <div class="row">
             <div class="col-11">
-                <input class="form-control" list="datalistOptions" id="${ingredientNameId}" placeholder="Type to search ingredient...">
+                <input class="form-control" list="datalistOptions" id="${ingredientNameId}" name="name" placeholder="Type to search ingredient...">
             </div>
         </div>
         <datalist id="datalistOptions">
@@ -31,10 +31,10 @@ addIngredientBtn.addEventListener('click', async (event) => {
         </datalist>
         <div class="row">
             <div class="col-6 col-sm-4">
-                <input class="form-control" id="${amountId}" type="text" name="${amountId}" placeholder="Amount" required/>  
+                <input class="form-control" id="${amountId}" type="text" name="amount" placeholder="Amount" required/>  
             </div>
             <div class="col-6 col-sm-4">
-                <input class="form-control" id="${unitId}" type="text" name="${unitId}" placeholder="Unit"/>
+                <input class="form-control" id="${unitId}" type="text" name="measurement_unit" placeholder="Unit"/>
             </div>
         </div>
     `;
