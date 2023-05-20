@@ -10,7 +10,7 @@ router.use('/users', userRoutes);
 
 router.use('/recipe', recipeRoutes);
 router.use('/ingredients', ingredientRoutes);
-router.use('/recipeingredient', recipeIngredientRoutes);
+router.use('/recipe_ingredient', recipeIngredientRoutes);
 
 
 module.exports = router;

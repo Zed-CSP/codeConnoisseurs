@@ -1,48 +1,61 @@
-addRecipeForm.addEventListener('click', 'submit-btn', async (event) => {
-    event.preventDefault();
-    const addRecipeForm = document.getElementById("add-recipe-form");
-    const formData = new FormData(addRecipeForm);
-    const recipeName = formData.get('name');
-    const description = formData.get('description');
-    const ingredientName = formData.get('ingredient1');
-    const ingredientQuantity = formData.get('quantity1');
-    const ingredientUnit = formData.get('unit1');
-    const instructions = formData.get('instructions');
-    const recipeBody = {recipeName, description, instructions};
-    const ingredientBody = {ingredientName}
-    const recIngBody = {ingredientQuantity, ingredientUnit}
+const addRecipeForm = document.getElementById('add-recipe-form');
+const successModal = document.getElementById('success-modal');
 
-    try {
-      const res = await fetch('/api/recipe', {
-        method: 'POST',
-        body: JSON.stringify(recipeBody),
-        headers: {'Content-Type': 'application/json'},
-      });
-      const recipeData = await res.json();
-      console.log(recipeData);
-      } catch (error) {
-      console.error(error);
-      };
-    try { //adjust this in order to use ingredient name to get UUID to populate the recipe_ingredient table
-      const res = await fetch('/api/ingredients/', {
-        method: 'POST',
-        body: JSON.stringify(ingredientBody),
-        headers: {'Content-Type': 'application/json'},
-      })
-      const ingredientData = await res.json();
-      console.log(ingredientData);
-    } catch (error) {
-      console.error(error);
-    };
-    try {
-      const res = await fetch('/api/recipeingredient', {
-        method: 'POST',
-        body: JSON.stringify(recIngBody),
-        headers: {'Content-Type': 'application/json'},
-      })
-      const recIngData = await res.json();
-      console.log(recIngData);
-    } catch (error) {
-      console.error(error);
-    };
-  });
+addRecipeForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  // Get recipe form inputs
+  const formData = new FormData(addRecipeForm);
+  const name = formData.get('name');
+  const description = formData.get('description');
+  const ingredientName = document.getElementById('ingredient1').value;
+  const ingredientAmount = formData.get('amount1');
+  const ingredientUnit = formData.get('unit1');
+  const instructions = formData.get('instructions');
+  
+  // If any required fields are missing, alert user
+  if (!name || !description || !instructions || !ingredientName || !ingredientAmount) {
+    return alert('Please fill in all required fields');
+  };
+
+  // Put inputs into an object to send to back-end
+  const recipeBody = {
+    name,
+    description,
+    instructions,
+    ingredientName,
+    ingredientAmount,
+    ingredientUnit
+  };
+
+  try {
+    // Get information about logged in user
+    const userResponse = await fetch('/api/users/loggedin');
+
+    // If user is not logged in, send to login page
+    if (!userResponse.ok) {
+        location.href = '/login';
+        return;
+    }
+
+    // Add creator id to body object
+    recipeBody.creatorId = await userResponse.json();
+
+    // POST request to add recipe
+    const response = await fetch('/api/recipe', {
+      method: 'POST',
+      body: JSON.stringify(recipeBody),
+      headers: {'Content-Type': 'application/json'},
+    });
+    
+    // If recipe was added, show success modal, else show error
+    if (response.ok) {
+      successModal.classList.add('show');
+      successModal.style.display = 'block';
+    } else {
+      alert('Failed to save recipe');
+    }
+  } catch (error) {
+    console.error(error);
+  };
+});
