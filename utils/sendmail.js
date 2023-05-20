@@ -1,5 +1,5 @@
 'use strict';
-function sendWelcomeEmail() {
+function sendWelcomeEmail(email) {
 const nodemailer = require('nodemailer');
 
 
