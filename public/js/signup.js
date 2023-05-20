@@ -1,5 +1,7 @@
+const sendWelcomeEmail = require('../../utils/sendmail');
+
 document.querySelector('#submit').addEventListener('click', async (e) => {
-    e.preventDefault();
+  e.preventDefault();
     const formData = new FormData(document.querySelector('#signup-form'));
     const first_name = formData.get('firstName');
     const last_name = formData.get('lastName');
@@ -17,11 +19,15 @@ document.querySelector('#submit').addEventListener('click', async (e) => {
       const data = await res.json();
       console.log(data);
       if(res.ok) {
+        sendWelcomeEmail(email);
         document.location.replace('/recipe/add');
       } else {
         alert(data.message);
       }
       } catch (error) {
       console.error(error);
-      }
-  });
+      };
+
+    });
+    
+   
