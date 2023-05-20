@@ -69,4 +69,25 @@ router.get('/home', async (req, res) => {
     }
 });
 
+
+// Render page to view feed of all Recipes for User
+router.get('/profile', async (req, res) => {
+    try {
+        const userID = req.session.user_id;
+        const recipeData = await Recipe.findAll({
+            include: [{model: Ingredient, model: User}],
+            //Beckee, can you help me with this? I'm trying to get the recipes for the user that is logged in
+            where: {user.id: userID},
+        });
+        const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+
+        res.render('home', { 
+            recipes,
+            showNav: true,
+        });
+    } catch (error) {
+        res.status(500).json({ error });
+    }
+})
+
 module.exports = router;
