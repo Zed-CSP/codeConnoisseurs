@@ -1,9 +1,9 @@
 <header>{{!--header or div in nested handlebars?--}}
-    <h1>Welcome {{user}}</h1>
+    <h1>Welcome {{users.user.first_name}}</h1>
 </header>
-    <section class="feed"> {{!--section or div?--}}
+    <section class="feed">
     {{#each recipes as |recipe|}}
-        <div class="post-card"> {{!--recipe feed cards--}}
+        <div class="post-card" id="{{recipe.id}}">
             <h2>{{recipe.name}}</h2>
             <p>{{recipe.description}}</p>
             <p class="author">By: {{recipe.user.first_name}} {{recipe.user.last_name}}</p>
