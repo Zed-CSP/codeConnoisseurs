@@ -29,7 +29,7 @@ addRecipeForm.addEventListener('submit', async (event) => {
   });
 
   // If any required fields are missing, alert user
-  if (!name || !description || !instructions || !ingredientsArr) {
+  if (!name || !description || !instructions || ingredientsArr.length === 0) {
     return alert('Please fill in all required fields');
   };
 
