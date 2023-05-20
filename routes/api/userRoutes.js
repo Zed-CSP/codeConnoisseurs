@@ -26,6 +26,20 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// GET /api/users/loggedin (get the logged in user's id)
+router.get('/loggedin', (req, res) => {
+  try {
+    if (req.session.user_id) {
+        const loggedinUser = req.session.user_id;
+        res.json(loggedinUser);
+    } else {
+        res.status(400).json({ message: 'no logged in user' });
+    }
+  } catch (error) {
+    res.status(500).json({error});
+  }
+});
+
 router.post('/test', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });

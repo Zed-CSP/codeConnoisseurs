@@ -36,10 +36,10 @@
                             </datalist>
                             <div class="row">
                                 <div class="col-6 col-sm-4">
-                                    <input class="form-control" id="quantity1" type="text" name="quantity1" placeholder="Quantity" required/>  
+                                    <input class="form-control" id="amount1" type="text" name="amount1" placeholder="Amount" required/>  
                                 </div>
                                 <div class="col-6 col-sm-4">
-                                    <input class="form-control" id="unit1" type="text" name="unit1" placeholder="Unit" required/>
+                                    <input class="form-control" id="unit1" type="text" name="unit1" placeholder="Unit"/>
                                 </div>
                                 
                             </div>
@@ -74,3 +74,19 @@
     </div>
 </div>
 
+<div class="modal" id="success-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Success!</h5>
+      </div>
+      <div class="modal-body">
+        <p>Your recipe has been posted.</p>
+        <a href="/recipe/mine">View My Recipes</a>
+        <a href="/home">View All Recipes</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/addRecipe.js"></script>
