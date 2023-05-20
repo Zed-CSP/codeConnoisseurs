@@ -12,7 +12,7 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/recipe/add');
+        document.location.replace('/home');
       } else {
         alert('Failed to log in');
       }
