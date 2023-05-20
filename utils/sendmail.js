@@ -54,15 +54,6 @@ transporter.sendMail(message, (error, info) => {
     console.log(nodemailer.getTestMessageUrl(info));
 });
 
-// transporter.sendMail({
-//     from: 'kchn.alchemy@gmail.com',
-//     to: 'roneilwork@gmail.com',
-//     subject: 'Message',
-//     text: 'Congratulations! You have completed registration with Kitchen Alchemy. '
-// }, (err, info) => {
-//     console.log(info.envelope);
-//     console.log(info.messageId);
-// });
 
 
 // transporter.verify(function (error, success) {
