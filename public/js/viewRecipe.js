@@ -1,0 +1,1 @@
+const currentRecipe = JSON.parse(localStorage.getItem('postId'));
