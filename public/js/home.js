@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const postId = card.id;
         // ADD ROUTE TO POST PAGE
         console.log('Clicked on post:', postId);
+        localStorage.setItem('postId', postId);
+        window.location.href = '/post';
       });
     });
   });
