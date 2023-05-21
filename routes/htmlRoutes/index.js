@@ -86,7 +86,6 @@ router.get('/home', async (req, res) => {
     }
 });
 
-
 // Render page to view feed of all Recipes for User
 router.get('/profile', async (req, res) => {
     try {
