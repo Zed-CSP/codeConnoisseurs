@@ -1,0 +1,22 @@
+<main>
+    <h1 class="title">{{recipe.name}}</h1>
+
+    <section class="feed">
+        <div class="post-card green-box m-5" id="{{recipe.id}}">
+            <h2>{{recipe.name}}</h2>
+            <p class="author">By: {{recipe.user.first_name}} {{recipe.user.last_name}}</p>
+            <p class="description">{{recipe.description}}</p>
+            <div id="ingredients">
+                <h3>Ingredients</h3>
+                <ul>
+                    {{#each recipe.ingredients as |ingredient|}}
+                        <li>{{ingredient.name}} {{ingredient.quantity}} {{ingredient.unit}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            <p class="instructions"> {{recipe.instructions}}</p>
+        </div>
+    </section>
+</main>
+
+<script src="/js/viewRecipe.js"></script>
