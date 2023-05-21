@@ -1,5 +1,3 @@
-
-
 document.querySelector('#submit').addEventListener('click', async (e) => {
   e.preventDefault();
     const formData = new FormData(document.querySelector('#signup-form'));
@@ -16,6 +14,7 @@ document.querySelector('#submit').addEventListener('click', async (e) => {
         body: JSON.stringify(body),
         headers: {'Content-Type': 'application/json'},
       });
+      
       const data = await res.json();
       console.log(data);
       if(res.ok) {
@@ -26,7 +25,4 @@ document.querySelector('#submit').addEventListener('click', async (e) => {
       } catch (error) {
       console.error(error);
       };
-
-    });
-    
-   
+});
