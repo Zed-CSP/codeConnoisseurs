@@ -106,7 +106,7 @@ input {
     border: none;
     border-radius: 13px;
     box-shadow: var(--shadow-box);
-    margin: 20px 30px 20px 30px;
+    margin-bottom: 20px;
     width: 350px;
 }
 
@@ -152,6 +152,10 @@ nav {
     color: var(--orange)
 }
 
+#signup-form #firstName {
+    margin-right: 20px;
+}
+
 #modal-btns {
     display: flex;
     justify-content: space-evenly;
@@ -171,7 +175,7 @@ nav {
 }
 
 @media (max-width: 767px) {
-    #login-title #title {
+    #title {
         font-size: 35px;
     }
 }
