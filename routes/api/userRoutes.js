@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const sendWelcomeEmail = require('../../utils/sendmail')
 
 //api/users endpoint
 router.post('/login', async (req, res) => {
@@ -100,13 +101,13 @@ router.post('/signup', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
+      sendWelcomeEmail(userData.email);
       res.status(200).json({ user: userData, message: 'You are now logged in!' });
     });
     
   } catch (err) {
     res.status(500).json(err);
   }
-})
+});
 
 module.exports = router;
