@@ -1,0 +1,16 @@
+<header>{{!--header or div in nested handlebars?--}}
+    <h1>Welcome {{session.user.first_name}}</h1>
+</header>
+    <section class="feed">
+        <div class="post-card green-box m-5" id="{{recipe.id}}">
+            <h1>{{recipe.name}}</h1>
+            <p class="description">{{recipe.description}}</p>
+            <h2>Ingredients</h2>
+            <p></p>
+            <h2>Instructions</h2>
+            <p>{{recipe.Instructions}}</p>
+            <p class="author">By: {{recipe.user.first_name}} {{recipe.user.last_name}}</p>
+        </div>
+    </section>
+
+<script src="/js/home.js"></script>

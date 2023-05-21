@@ -40,7 +40,7 @@ router.get('/recipe/add', async (req, res) => {
 router.get('/recipe/:id', async (req, res) => {
     try {
         const recipeData = await Recipe.findByPk(req.params.id, {
-            include: [{model: Ingredient}],
+            include: [{model: Ingredient, model: User}],
         });
         const recipe = recipeData.get({ plain: true });
         res.render('recipe', {
