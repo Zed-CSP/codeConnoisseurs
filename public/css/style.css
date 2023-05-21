@@ -36,7 +36,7 @@ h2 {
     font-family: var(--header-font);
 }
 
-button {
+button, #modal-btns .btn {
     background-color: var(--orange);
     color: white;
     border: 2px solid var(--dark-orange);
@@ -45,14 +45,13 @@ button {
     padding: 3px 20px;
 }
 
-button:hover {
+button:hover, #modal-btns .btn:hover {
     background-color: var(--dark-orange);
     color: rgb(143, 143, 143);
     border: 2px solid var(--orange);
     border-radius: 10px;
     box-shadow: var(--shadow-box);  
     padding: 3px 20px;
-
 }
 
 #intro {
@@ -93,6 +92,7 @@ header, .welcome {
 .bg-image3 {
     background-image: url('../images/background3.png');
 }
+
 .bg-image1, .bg-image2, .bg-image3 {
     background-size: cover;
     background-position: center;
@@ -141,4 +141,14 @@ nav {
 
 .author {
     font-style: italic;
+}
+
+.modal-content {
+    background-color: var(--dark-green);
+    color: var(--orange)
+}
+
+#modal-btns {
+    display: flex;
+    justify-content: space-evenly;
 }
