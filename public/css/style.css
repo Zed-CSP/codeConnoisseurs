@@ -54,6 +54,10 @@ button:hover, #modal-btns .btn:hover {
     padding: 3px 20px;
 }
 
+#login-row {
+    height: 100vh;
+}
+
 #intro {
     border-top: 5px solid var(--dark-green);
     color: white;
@@ -151,4 +155,32 @@ nav {
 #modal-btns {
     display: flex;
     justify-content: space-evenly;
+}
+
+@media (max-width: 991px) {
+    header {
+        height: fit-content;
+    }
+    #login-row {
+        align-items: flex-start;
+    }
+    #login-title {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 767px) {
+    #login-title #title {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 575px) {
+    input {
+        width: 100%;   
+    }
+    #login-box {
+        width: 75%;
+    }
 }
