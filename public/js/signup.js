@@ -1,5 +1,5 @@
 document.querySelector('#submit').addEventListener('click', async (e) => {
-    e.preventDefault();
+  e.preventDefault();
     const formData = new FormData(document.querySelector('#signup-form'));
     const first_name = formData.get('firstName');
     const last_name = formData.get('lastName');
@@ -14,6 +14,7 @@ document.querySelector('#submit').addEventListener('click', async (e) => {
         body: JSON.stringify(body),
         headers: {'Content-Type': 'application/json'},
       });
+      
       const data = await res.json();
       console.log(data);
       if(res.ok) {
@@ -23,5 +24,5 @@ document.querySelector('#submit').addEventListener('click', async (e) => {
       }
       } catch (error) {
       console.error(error);
-      }
-  });
+      };
+});

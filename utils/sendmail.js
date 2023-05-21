@@ -1,10 +1,6 @@
 'use strict';
-
+function sendWelcomeEmail(email) {
 const nodemailer = require('nodemailer');
-// const transporter = nodemailer.createTransport(transport[, defaults])
-//transporter = object able to send mail
-//transport = tranpsort config object, connection url, or transport plugin instance
-//defaults = object that defines default values for mail options
 
 let transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -14,7 +10,6 @@ let transporter = nodemailer.createTransport({
         user: 'kchn.alchemy@gmail.com',
         pass: 'swfozpmctersxcbp',
     },
-   
 });
 
 let message = {
@@ -43,7 +38,6 @@ let message = {
 </tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></div></body></html>`,
 };
 
-
 transporter.sendMail(message, (error, info) => {
     if (error) {
         console.log('Error occurred');
@@ -53,8 +47,11 @@ transporter.sendMail(message, (error, info) => {
     console.log('Message sent successfully!');
     console.log(nodemailer.getTestMessageUrl(info));
 });
+};
 
+// sendWelcomeEmail();
 
+module.exports = sendWelcomeEmail;
 
 // transporter.verify(function (error, success) {
 //     if (error) {

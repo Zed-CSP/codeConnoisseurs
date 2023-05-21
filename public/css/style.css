@@ -61,7 +61,7 @@ button:hover {
     padding-top: 20px;
 }
 
-header {
+header, .welcome {
     background-color: var(--green);
 }
 
