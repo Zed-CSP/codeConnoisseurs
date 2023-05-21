@@ -76,6 +76,7 @@ router.get('/home', async (req, res) => {
             res.render('home', { 
                 recipes,
                 showNav: true,
+                firstName: req.session.user_fn,
             });
         // If not logged in go to login screen
         } else {
