@@ -1,36 +1,44 @@
-addRecipeForm.addEventListener('click', 'add-btn', async (event) => {
+const addIngredientBtn = document.getElementById('add-btn');
+const ingredientContainer = document.getElementById('ingredient-container');
+
+// Set currentId outside of event listener so it doesn't reset each time button is clicked
+let currentId = 1;
+
+addIngredientBtn.addEventListener('click', async (event) => {
     event.preventDefault();
-    
-    const ingredientList = document.getElementById('ingredient-data1'); //get parent ingredient fieldset
 
-    //increment number at end of ids
-    let i = 2
-    const ingredientDataId = 'ingredient-data' + i++;
-    const ingredientNameId = 'ingredient' + i++;
-    const quantityId = 'quantity' + i++;
-    const unitId = 'unit' + i++;
+    // Increment currentId and append to the id values in the fieldset
+    currentId++;
+    const ingredientDataId = 'ingredient-data' + currentId;
+    const ingredientNameId = 'ingredient' + currentId;
+    const amountId = 'amount' + currentId;
+    const unitId = 'unit' + currentId;
 
-    //template literal for new ingredient fieldset
-    const ingredientTemplate = `
-        <fieldset id="${ingredientDataId}">
-            <label for="${ingredientNameId}">Ingredient:</label>
-            <select name="${ingredientNameId}" id="${ingredientNameId}">
-                {{#each ingredients as |ingredient|}}
-                    <option value="{{ingredient.name}}">{{ingredient.name}}</option>
-                {{/each}}
-            </select>
-            <label for="${quantityId}">Quantity:</label>
-            <input id="${quantityId}" type="text" name="${quantityId}" placeholder="Quantity" required/>
-            <label for="${unitId}">Unit:</label>
-            <input id="${unitId}" type="text" name="${unitId}" placeholder="Unit" required/>
-        </fieldset>
-        `;
+    // Create new fieldset with incremented ids
+    const ingredientFieldset = document.createElement('fieldset');
+    ingredientFieldset.setAttribute('id', `${ingredientDataId}`);
+    ingredientFieldset.innerHTML = `
+        <label for="${ingredientNameId}" class="form-label">Ingredient:</label>
+        <div class="row">
+            <div class="col-11">
+                <input class="form-control" list="datalistOptions" id="${ingredientNameId}" name="name" placeholder="Type to search ingredient...">
+            </div>
+        </div>
+        <datalist id="datalistOptions">
+            {{#each ingredients as |ingredient|}}
+                <option value="{{ingredient.name}}"></option>
+            {{/each}}
+        </datalist>
+        <div class="row">
+            <div class="col-6 col-sm-4">
+                <input class="form-control" id="${amountId}" type="text" name="amount" placeholder="Amount" required/>  
+            </div>
+            <div class="col-6 col-sm-4">
+                <input class="form-control" id="${unitId}" type="text" name="measurement_unit" placeholder="Unit"/>
+            </div>
+        </div>
+    `;
 
-
-    //create new ingredient fieldset
-    const newIngredient = document.createElement(ingredientTemplate);
-
-    //append new ingredient form to parent fieldset 
-    newIngredient.appendChild(ingredientList); 
-
+    // Add new fieldset below last fieldset
+    ingredientContainer.appendChild(ingredientFieldset);
 });

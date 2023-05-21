@@ -4,11 +4,11 @@
             <h1 class="text-center">Add New Recipe</h1>
             <form id="add-recipe-form">
                 
-                <!-- Ingredient name -->
+                <!-- Recipe name -->
                 <div class="row">
                     <div class="col-11">
-                        <label for="name">Name:</label>
-                        <input class="form-control" id="name" type="text" name="name" placeholder="Name" required/>
+                        <label for="recipe-name">Name:</label>
+                        <input class="form-control" id="recipe-name" type="text" name="recipe-name" placeholder="Name" required/>
                     </div>
                 </div>
 
@@ -22,12 +22,13 @@
 
                 <!-- Ingredient details -->
                 <div class="row justify-content-center">
-                    <div class="col-11">
+                    <div class="col-11" id="ingredient-container">
+                        <!-- Any changes to this fieldset need to be made in addIngredient.js as well -->
                         <fieldset id="ingredient-data1">
                             <label for="ingredient1" class="form-label">Ingredient:</label>
                             <div class="row">
                                 <div class="col-11">
-                                    <input class="form-control" list="datalistOptions" id="ingredient1" placeholder="Type to search ingredient...">
+                                    <input class="form-control" list="datalistOptions" id="ingredient1" name="name" placeholder="Type to search ingredient...">
                                 </div>
                             </div>
                             <datalist id="datalistOptions">
@@ -37,10 +38,10 @@
                             </datalist>
                             <div class="row">
                                 <div class="col-6 col-sm-4">
-                                    <input class="form-control" id="amount1" type="text" name="amount1" placeholder="Amount" required/>  
+                                    <input class="form-control" id="amount1" type="text" name="amount" placeholder="Amount" required/>  
                                 </div>
                                 <div class="col-6 col-sm-4">
-                                    <input class="form-control" id="unit1" type="text" name="unit1" placeholder="Unit"/>
+                                    <input class="form-control" id="unit1" type="text" name="measurement_unit" placeholder="Unit"/>
                                 </div>
                                 
                             </div>
@@ -91,3 +92,4 @@
 </div>
 
 <script src="/js/addRecipe.js"></script>
+<script src="/js/addIngredient.js"></script>

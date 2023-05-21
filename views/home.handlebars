@@ -3,9 +3,9 @@
 </header>
     <section class="feed">
     {{#each recipes as |recipe|}}
-        <div class="post-card" id="{{recipe.id}}">
+        <div class="post-card green-box m-5" id="{{recipe.id}}">
             <h2>{{recipe.name}}</h2>
-            <p>{{recipe.description}}</p>
+            <p class="description">{{recipe.description}}</p>
             <p class="author">By: {{recipe.user.first_name}} {{recipe.user.last_name}}</p>
         </div>
     {{/each}}
