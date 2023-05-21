@@ -12,6 +12,7 @@
 <body>
 
     {{#if showNav}}
+      <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
           <a class="navbar-brand m-4" id="title" href="/home">
             <img src="/images/logo.png" alt="Logo" class="logo">
@@ -34,6 +35,7 @@
             <button class="ml-auto" id="logout">Log Out</button>
           </div>
         </nav>
+      </header>
     {{/if}}
 
     {{{ body }}}

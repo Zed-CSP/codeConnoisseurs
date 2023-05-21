@@ -64,6 +64,7 @@ router.get('/home', async (req, res) => {
         res.render('home', { 
             recipes,
             showNav: true,
+            firstName: req.session.user_fn,
         });
     } catch (error) {
         res.status(500).json({ error });

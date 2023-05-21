@@ -1,14 +1,15 @@
-<header>{{!--header or div in nested handlebars?--}}
-    <h1>Welcome {{session.user.first_name}}</h1>
-</header>
+<main>
+    <h1 class="welcome">Welcome, {{firstName}}!</h1>
+
     <section class="feed">
-    {{#each recipes as |recipe|}}
-        <div class="post-card green-box m-5" id="{{recipe.id}}">
-            <h2>{{recipe.name}}</h2>
-            <p class="description">{{recipe.description}}</p>
-            <p class="author">By: {{recipe.user.first_name}} {{recipe.user.last_name}}</p>
-        </div>
-    {{/each}}
+        {{#each recipes as |recipe|}}
+            <div class="post-card green-box m-5" id="{{recipe.id}}">
+                <h2>{{recipe.name}}</h2>
+                <p class="description">{{recipe.description}}</p>
+                <p class="author">By: {{recipe.user.first_name}} {{recipe.user.last_name}}</p>
+            </div>
+        {{/each}}
     </section>
+</main>
 
 <script src="/js/home.js"></script>
