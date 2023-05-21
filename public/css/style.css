@@ -4,6 +4,7 @@
 /* import Lobster font */
 @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
 
+/* Elements */
 :root {
     --green: rgb(158, 210, 109);
     --orange: #ff9900ff;
@@ -17,16 +18,7 @@
     --p-font: Arial, sans-serif;
 }
 
-/*title is Kitchen Alchemy*/
-#title {
-    color: var(--dark-orange);
-    font-family: var(--header-font);
-    font-size: 70px;
-    font-weight: bold;
-    margin: 10px 0 20px 10px;
-}
-
-h1 {
+h1, .h1 {
     color: var(--dark-green);
     font-family: var(--h1-font);
 }
@@ -34,6 +26,10 @@ h1 {
 h2 {
     color: var(--dark-orange);
     font-family: var(--header-font);
+}
+
+nav {
+    background-color: var(--dark-green);
 }
 
 button, #modal-btns .btn {
@@ -54,27 +50,26 @@ button:hover, #modal-btns .btn:hover {
     padding: 3px 20px;
 }
 
-#login-row {
-    height: 100vh;
-}
-
-#intro {
-    border-top: 5px solid var(--dark-green);
-    color: white;
-    padding-top: 20px;
-}
-
 header, .welcome {
     background-color: var(--green);
 }
 
+input {
+    border: none;
+    border-radius: 13px;
+    box-shadow: var(--shadow-box);
+    margin-bottom: 20px;
+    width: 350px;
+}
+
+/* Classes */
 .green-box {
     /*border and background*/
     background-color: var(--trans-green);
     border: 1px solid #ffffff;
     border-radius: 35px;
     box-shadow: var(--shadow-box);
-    padding: 40px 40px 40px 40px;
+    padding: 30px;
 }
 
 .vh-100 {
@@ -102,14 +97,6 @@ header, .welcome {
     background-position: center;
 }
 
-input {
-    border: none;
-    border-radius: 13px;
-    box-shadow: var(--shadow-box);
-    margin-bottom: 20px;
-    width: 350px;
-}
-
 .orange-el {
     color: var(--dark-orange);
     margin-top: 5px;
@@ -122,10 +109,6 @@ input {
 
 .mg-custom {
     margin-right: 5px;
-}
-
-nav {
-    background-color: var(--dark-green);
 }
 
 .nav-link-cus {
@@ -152,6 +135,34 @@ nav {
     color: var(--orange)
 }
 
+/* IDs */
+/*title is Kitchen Alchemy*/
+#title {
+    color: var(--dark-orange);
+    font-family: var(--header-font);
+    font-size: 70px;
+    font-weight: bold;
+    margin: 10px 0 20px 10px;
+}
+
+#login-row {
+    height: 100vh;
+}
+
+#intro {
+    border-top: 5px solid var(--dark-green);
+    color: white;
+    padding-top: 20px;
+}
+
+#login-box {
+    width: 400px;
+}
+
+#signup-box {
+    margin-top: 10%;
+}
+
 #signup-form #firstName {
     margin-right: 20px;
 }
@@ -161,6 +172,7 @@ nav {
     justify-content: space-evenly;
 }
 
+/* Media Queries */
 @media (max-width: 991px) {
     header {
         height: fit-content;
@@ -184,7 +196,11 @@ nav {
     input {
         width: 100%;   
     }
+    #login-row {
+        height: auto;
+    }
     #login-box {
-        width: 75%;
+        width: 85%;
+        margin: 10% 0;
     }
 }
