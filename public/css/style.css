@@ -77,8 +77,8 @@ header, .welcome {
     height: 100vh;
 }
 
-.vh-200 {
-    height:200vh;
+.vh-110 {
+    height:110vh;
 }
 
 .bg-image1 {
@@ -151,4 +151,11 @@ nav {
 #modal-btns {
     display: flex;
     justify-content: space-evenly;
+}
+
+.nav-title {
+    font-size: 40px;
+    color: var(--dark-orange);
+    font-family: var(--header-font);
+    font-weight: bold;
 }
