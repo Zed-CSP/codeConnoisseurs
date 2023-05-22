@@ -4,7 +4,7 @@
 /* import Lobster font */
 @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
 
-/* Elements */
+/* General Styles */
 :root {
     --green: rgb(158, 210, 109);
     --orange: #ff9900ff;
@@ -66,7 +66,7 @@ textarea {
     margin-bottom: 20px;
 }
 
-/* Classes */
+/* Utilities */
 .green-box {
     /*border and background*/
     background-color: var(--trans-green);
@@ -80,6 +80,39 @@ textarea {
     height: 100vh;
 }
 
+.orange-el {
+    color: var(--dark-orange);
+    margin-top: 5px;
+}
+
+.orange-el:hover {
+    color: var(--orange);
+    margin-top: 5px;
+}
+
+.mg-custom {
+    margin-right: 5px;
+}
+
+/* Navigation / Header */
+/*title is Kitchen Alchemy*/
+#title {
+    color: var(--dark-orange);
+    font-family: var(--header-font);
+    font-size: 70px;
+    font-weight: bold;
+    margin: 10px 0 20px 10px;
+}
+
+.nav-link-cus {
+    color: white;
+}
+
+.nav-link-cus:hover {
+    color:rgb(143, 143, 143);
+}
+
+/* Backgrounds */
 .bg-image1 {
     background-image: url('../images/background1.png');
 }
@@ -97,28 +130,27 @@ textarea {
     background-position: center;
 }
 
-.orange-el {
-    color: var(--dark-orange);
-    margin-top: 5px;
-}
-
-.orange-el:hover {
-    color: var(--orange);
-    margin-top: 5px;
-}
-
-.mg-custom {
-    margin-right: 5px;
-}
-
-.nav-link-cus {
+/* Login */
+#intro {
+    border-top: 5px solid var(--dark-green);
     color: white;
+    padding-top: 20px;
 }
 
-.nav-link-cus:hover {
-    color:rgb(143, 143, 143);
+#login-box {
+    width: 400px;
 }
 
+/* Signup */
+#signup-box {
+    margin-top: 10%;
+}
+
+#signup-form #firstName, #ingredient-container .space-right {
+    margin-right: 20px;
+}
+
+/* Recipe list */
 .description {
     border-top: 3px solid var(--dark-green);
     font-size: 150%;
@@ -130,39 +162,7 @@ textarea {
     font-style: italic;
 }
 
-.modal-content {
-    background-color: var(--dark-green);
-    color: var(--orange)
-}
-
-/* IDs */
-/*title is Kitchen Alchemy*/
-#title {
-    color: var(--dark-orange);
-    font-family: var(--header-font);
-    font-size: 70px;
-    font-weight: bold;
-    margin: 10px 0 20px 10px;
-}
-
-#intro {
-    border-top: 5px solid var(--dark-green);
-    color: white;
-    padding-top: 20px;
-}
-
-#login-box {
-    width: 400px;
-}
-
-#signup-box {
-    margin-top: 10%;
-}
-
-#signup-form #firstName, #ingredient-container .space-right {
-    margin-right: 20px;
-}
-
+/* Add recipe */
 #recipe-box {
     margin: 5% 0;
     width: 85%;
@@ -171,6 +171,11 @@ textarea {
 
 #add-btn-container {
     margin-bottom: 20px;
+}
+
+.modal-content {
+    background-color: var(--dark-green);
+    color: var(--orange)
 }
 
 #modal-btns {
