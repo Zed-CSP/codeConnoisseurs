@@ -8,31 +8,13 @@
                 <p class="description">{{recipe.description}}</p>
                 <p class="author"><a href="../profile/{{recipe.user.id}}">{{recipe.user.first_name}} {{recipe.user.last_name}}</a> </p>
                 {{#each recipe.ingredients as |ingredient|}}
-                    <span data-value="{{ingredient.name}} {{ingredient.recipe_ingredient.amount}}"></span>
+                    <span class="ingredient" data-value="{{ingredient.name}}"></span>
                 {{/each}}
             </div>
         {{/each}}
     </section>
 </main>
 
-<div class="modal" id="ingredient-modal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Search By Ingredient</h5>
-      </div>
-      <div class="modal-body">
-        <select name="ingredient-select" id="ingredient-select">
-            {{#each ingredients as |ingredient|}}
-                <option value="{{ingredient.id}}">{{ingredient.name}}</option>
-            {{/each}}
-        <div id="modal-btns">
-            <a class="btn" href="*something else*">Search</a>
-            <a class="btn" href="/home">View All Recipes</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <script src="/js/home.js"></script>
