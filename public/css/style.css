@@ -8,6 +8,7 @@
 :root {
     --green: rgb(158, 210, 109);
     --orange: #ff9900ff;
+    --hover-green: rgb(143, 143, 143);
     --dark-green: #38761dff;
     --dark-orange: #ff7804;
     --trans-green: rgb(217, 234, 211, 0.88);
@@ -168,6 +169,17 @@ textarea {
 .author {
     font-style: italic;
 }
+
+.post-card {
+    cursor: pointer;
+}
+
+.post-card:hover {
+    background-color: var(--hover-green);
+    color: var(--orange);
+    box-shadow: black 0px 0px 10px;
+}
+
 
 /* Add recipe */
 #recipe-box {
