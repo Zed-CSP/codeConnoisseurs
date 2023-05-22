@@ -1,5 +1,5 @@
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  # Employee Database
+  # Kitchen Alchemy
   
   ## Description
  Kitchen Alchemy is an application intended to allow users to save and create recipes using a recipe database.
