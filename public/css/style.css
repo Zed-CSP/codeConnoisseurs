@@ -202,3 +202,8 @@ textarea {
         height: 170vh;
     }
 }
+
+.instructions {
+    font-size: 25px;
+    color: var(--dark-green);
+}
