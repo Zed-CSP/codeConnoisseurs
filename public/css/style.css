@@ -8,7 +8,7 @@
 :root {
     --green: rgb(158, 210, 109);
     --orange: #ff9900ff;
-    --hover-green: rgb(143, 143, 143);
+    --hover-green: rgb(116, 160, 96);
     --dark-green: #38761dff;
     --dark-orange: #ff7804;
     --trans-green: rgb(217, 234, 211, 0.88);
@@ -170,11 +170,8 @@ textarea {
     font-style: italic;
 }
 
-.post-card {
+.feed.post-card:hover {
     cursor: pointer;
-}
-
-.post-card:hover {
     background-color: var(--hover-green);
     color: var(--orange);
     box-shadow: black 0px 0px 10px;
@@ -209,9 +206,16 @@ textarea {
     font-weight: bold;
 }
 
+.mg-cus-nav {
+    margin-top: 230px;
+}
+
 @media (max-width: 375px) {
     .vh-130{
         height: 170vh;
+    }
+    .mg-cus-nav {
+        margin-top: 280px;
     }
 }
 
@@ -219,3 +223,4 @@ textarea {
     font-size: 25px;
     color: var(--dark-green);
 }
+
