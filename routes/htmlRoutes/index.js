@@ -1,6 +1,12 @@
 const router = require('express').Router();
 const { Ingredient, Recipe, User, Recipe_Ingredient } = require('../../models');
 
+const recipeRoutes = require('./recipeRoutes');
+
+// send over to Recipe Routes for /recipe/:id and /recipe/add
+router.use('/recipe', recipeRoutes);
+
+
 router.get('/', (req, res) => {
     try {
         if(req.session.logged_in) {
@@ -21,58 +27,6 @@ router.get('/signup', (req, res) => {
     }
 });
 
-// Render page to add new recipe
-router.get('/recipe/add', async (req, res) => {
-    try {
-        // If user is logged in
-        if (req.session.logged_in) {
-            // Get all ingredients from the db
-            const ingredientsData = await Ingredient.findAll({
-                order: [
-                    ['name', 'ASC'],
-                ],
-            });
-            const ingredients = ingredientsData.map(ingredient => ingredient.get({ plain: true }));
-    
-            // Render template
-            res.render('add-recipe', { 
-                ingredients,
-                showNav: true,
-            });
-        // If not logged in go to login screen
-        } else {
-            res.redirect('/');
-        }
-    } catch (error) {
-        res.status(500).json({ error });
-    }
-});
-
-//untested functionality for finding a recipe by id and page loading
-router.get('/recipe/:id', async (req, res) => {
-    try {
-        const recipeData = await Recipe.findByPk(req.params.id, {
-            include: [ 
-                {
-                    model: User,
-                    attributes: ['first_name', 'last_name', 'id'],
-                },
-                {
-                    model: Ingredient,
-                    through: {Recipe_Ingredient}
-                }
-            ],
-        });
-        const recipe = recipeData.get({ plain: true });
-        console.log(recipe);
-        res.render('view-recipe', {
-            recipe,
-            showNav: true,
-        })
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
 
 // Render page to view feed of all Recipes
 router.get('/home', async (req, res) => {
