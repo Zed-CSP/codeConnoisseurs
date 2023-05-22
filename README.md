@@ -50,7 +50,13 @@
   ## Credits
   Welcome email template created using [Stripo.email](https://stripo.email/).
   Images sourced from _____________
-    
+
+  Tutorials/resources referenced:
+  - Stack Overflow - [Why does using async-await in map function still return promises and not the resolved values?](https://stackoverflow.com/questions/65655885/why-does-using-async-await-in-map-function-still-return-promises-and-not-the-res)
+      - This post helped with troubleshooting ingredient handling in the `/api/recipe POST` request in `/routes/api/recipeRoutes.js`
+  - Go Make Things - [Converting a NodeList to an array with vanilla JavaScript](https://gomakethings.com/converting-a-nodelist-to-an-array-with-vanilla-javascript/)
+      - This post helped with troubleshooting getting ingredient information in `/public/js/addRecipe.js`
+
   ## License
   This project is licensed under the MIT License - see Badge link for details.
   
