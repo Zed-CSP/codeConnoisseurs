@@ -23,7 +23,7 @@ router.post('/', async (req,res) => {
 
         // Get each ingredient id from name and add to ingredient object
         const ingredientsArr = req.body.ingredientsArr.map(async (ingredient) => {
-            const ingredientData = await Ingredient.findOne({ where: { name: ingredient.name }});
+            const [ingredientData, created] = await Ingredient.findOrCreate({ where: { name: ingredient.name }});
             const ingredientPlain = ingredientData.get({ plain: true });
             ingredient.id = ingredientPlain.id;
             return ingredient;
