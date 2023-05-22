@@ -4,6 +4,7 @@
 /* import Lobster font */
 @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
 
+/* General Styles */
 :root {
     --green: rgb(158, 210, 109);
     --orange: #ff9900ff;
@@ -17,16 +18,7 @@
     --p-font: Arial, sans-serif;
 }
 
-/*title is Kitchen Alchemy*/
-#title {
-    color: var(--dark-orange);
-    font-family: var(--header-font);
-    font-size: 70px;
-    font-weight: bold;
-    margin: 10px 0 20px 10px;
-}
-
-h1 {
+h1, .h1 {
     color: var(--dark-green);
     font-family: var(--h1-font);
 }
@@ -34,6 +26,10 @@ h1 {
 h2 {
     color: var(--dark-orange);
     font-family: var(--header-font);
+}
+
+nav {
+    background-color: var(--dark-green);
 }
 
 button, #modal-btns .btn {
@@ -54,33 +50,72 @@ button:hover, #modal-btns .btn:hover {
     padding: 3px 20px;
 }
 
-#intro {
-    border-top: 5px solid var(--dark-green);
-    color: white;
-    padding-top: 20px;
-}
-
 header, .welcome {
     background-color: var(--green);
 }
 
+input {
+    border: none;
+    border-radius: 13px;
+    box-shadow: var(--shadow-box);
+    margin-bottom: 20px;
+    width: 350px;
+}
+
+textarea {
+    margin-bottom: 20px;
+}
+
+/* Utilities */
 .green-box {
     /*border and background*/
     background-color: var(--trans-green);
     border: 1px solid #ffffff;
     border-radius: 35px;
     box-shadow: var(--shadow-box);
-    padding: 40px 40px 40px 40px;
+    padding: 30px;
 }
 
-.vh-100 {
+.vh-100-custom {
     height: 100vh;
 }
 
 .vh-110 {
     height:110vh;
 }
+.orange-el {
+    color: var(--dark-orange);
+    margin-top: 5px;
+}
 
+.orange-el:hover {
+    color: var(--orange);
+    margin-top: 5px;
+}
+
+.mg-custom {
+    margin-right: 5px;
+}
+
+/* Navigation / Header */
+/*title is Kitchen Alchemy*/
+#title {
+    color: var(--dark-orange);
+    font-family: var(--header-font);
+    font-size: 70px;
+    font-weight: bold;
+    margin: 10px 0 20px 10px;
+}
+
+.nav-link-cus {
+    color: white;
+}
+
+.nav-link-cus:hover {
+    color:rgb(143, 143, 143);
+}
+
+/* Backgrounds */
 .bg-image1 {
     background-image: url('../images/background1.png');
 }
@@ -98,40 +133,27 @@ header, .welcome {
     background-position: center;
 }
 
-input {
-    border: none;
-    border-radius: 13px;
-    box-shadow: var(--shadow-box);
-    margin: 20px 30px 20px 30px;
-    width: 350px;
-}
-
-.orange-el {
-    color: var(--dark-orange);
-    margin-top: 5px;
-}
-
-.orange-el:hover {
-    color: var(--orange);
-    margin-top: 5px;
-}
-
-.mg-custom {
-    margin-right: 5px;
-}
-
-nav {
-    background-color: var(--dark-green);
-}
-
-.nav-link-cus {
+/* Login */
+#intro {
+    border-top: 5px solid var(--dark-green);
     color: white;
+    padding-top: 20px;
 }
 
-.nav-link-cus:hover {
-    color:rgb(143, 143, 143);
+#login-box {
+    width: 400px;
 }
 
+/* Signup */
+#signup-box {
+    margin-top: 10%;
+}
+
+#signup-form #firstName, #ingredient-container .space-right {
+    margin-right: 20px;
+}
+
+/* Recipe list */
 .description {
     border-top: 3px solid var(--dark-green);
     font-size: 150%;
@@ -141,6 +163,17 @@ nav {
 
 .author {
     font-style: italic;
+}
+
+/* Add recipe */
+#recipe-box {
+    margin: 5% 0;
+    width: 85%;
+    max-width: 700px;
+}
+
+#add-btn-container {
+    margin-bottom: 20px;
 }
 
 .modal-content {
@@ -154,7 +187,7 @@ nav {
 }
 
 .nav-title {
-    font-size: 40px;
+    font-size: 30px;
     color: var(--dark-orange);
     font-family: var(--header-font);
     font-weight: bold;

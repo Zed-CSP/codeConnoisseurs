@@ -4,13 +4,12 @@
     <section class="feed">
         <div class="post-card green-box m-5" id="{{recipe.id}}">
             <h2>{{recipe.name}}</h2>
-            <p class="author">By: {{recipe.user.first_name}} {{recipe.user.last_name}}</p>
-            <p class="description">{{recipe.description}}</p>
+            <p class="author"><a href="../profile/{{recipe.user.id}}">{{recipe.user.first_name}} {{recipe.user.last_name}}</a> </p>            <p class="description">{{recipe.description}}</p>
             <div id="ingredients">
                 <h3>Ingredients</h3>
                 <ul>
                     {{#each recipe.ingredients as |ingredient|}}
-                        <li>{{ingredient.name}} {{ingredient.quantity}} {{ingredient.unit}}</li>
+                        <li>{{ingredient.name}} {{ingredient.recipe_ingredient.amount}} {{ingredient.recipe_ingredient.measurement_unit}}</li>
                     {{/each}}
                 </ul>
             </div>
