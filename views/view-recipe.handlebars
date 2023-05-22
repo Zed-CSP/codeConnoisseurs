@@ -7,7 +7,7 @@
             <p class="author"><a href="../profile/{{recipe.user.id}}">{{recipe.user.first_name}} {{recipe.user.last_name}}</a> </p>            
             <p class="description">{{recipe.description}}</p>
             <div id="ingredients">
-                <h4>Ingredients</4>
+                <h4>Ingredients</h4>
                 <ul>
                     {{#each recipe.ingredients as |ingredient|}}
                         <li>{{ingredient.name}} {{ingredient.recipe_ingredient.amount}} {{ingredient.recipe_ingredient.measurement_unit}}</li>
