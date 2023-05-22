@@ -77,6 +77,10 @@ textarea {
     padding: 30px;
 }
 
+.hidden {
+    display: none;
+}
+
 .vh-100-custom {
     height: 100vh;
 }

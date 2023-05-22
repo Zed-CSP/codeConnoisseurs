@@ -35,7 +35,14 @@ router.get('/home', async (req, res) => {
         if (req.session.logged_in) {
             // Get all recipes from the db
             const recipeData = await Recipe.findAll({
-                include: [{model: Ingredient, model: User}],
+                include: [{
+                    model: User,
+                    attributes: ['first_name', 'last_name', 'id'],
+                },
+                {
+                    model: Ingredient,
+                    through: {Recipe_Ingredient}
+                }],
                 order: [['createdAt', 'DESC']],
             });
             const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
@@ -77,7 +84,11 @@ router.get('/profile/:id', async (req, res) => {
     try {
         const userId = req.params.id;
         const recipeData = await Recipe.findAll({
-            include: [{ model: Ingredient, model: User }],
+            include: [{
+                model: Ingredient,
+                through: {Recipe_Ingredient}
+            },
+            { model: User }],
             where: { creator_id: userId },
             order: [[ 'createdAt', 'DESC' ]],
         });
