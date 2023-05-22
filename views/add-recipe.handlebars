@@ -1,50 +1,80 @@
-<main class="col vh-100-custom bg-image3 d-flex justify-content-center align-items-start height-auto-sm">
-    <div id="recipe-box" class="green-box"> 
-        <h1 class="text-center">Add New Recipe</h1>
-        <form id="add-recipe-form">
-            <!-- Recipe name -->
-            <label for="recipe-name" class="form-label">Name:</label>
-            <input class="form-control" id="recipe-name" type="text" name="recipe-name" placeholder="Name" required/>
-
-            <!-- Description -->
-            <label for="description" class="form-label">Description:</label>
-            <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter the description here" required></textarea>
-
-            <!-- Ingredient details -->
-            <div id="ingredient-container">
-                <!-- Any changes to this fieldset need to be made in addIngredient.js as well -->
-                <fieldset id="ingredient-data1">
-                    <label for="ingredient1" class="form-label">Ingredient:</label>
-                    <div class="d-sm-flex">
-                        <input class="form-control space-right" list="datalistOptions" id="ingredient1" name="name" placeholder="Type to search...">
-                        <datalist id="datalistOptions">
-                            {{#each ingredients as |ingredient|}}
-                                <option value="{{ingredient.name}}"></option>
-                            {{/each}}
-                        </datalist>
-                        <input class="form-control space-right" id="amount1" type="text" name="amount" placeholder="Amount" required/>  
-                        <input class="form-control" id="unit1" type="text" name="measurement_unit" placeholder="Unit"/>
+<div class="row">
+    <div class="col vh-200 bg-image3 d-flex justify-content-center align-items-center">
+        <div class="green-box"> 
+            <h1 class="text-center">Add New Recipe</h1>
+            <form id="add-recipe-form">
+                
+                <!-- Recipe name -->
+                <div class="row">
+                    <div class="col-11">
+                        <label for="recipe-name">Name:</label>
+                        <input class="form-control" id="recipe-name" type="text" name="recipe-name" placeholder="Name" required/>
                     </div>
-                </fieldset>
-            </div>
+                </div>
 
-            <!-- Add ingredient button-->
-            <div id="add-btn-container">
-                <button id="add-btn">+</button>
-                <p class="d-inline orange-el">Add ingredient</p>
-            </div>
+                <!-- Description -->
+                <div class="row justify-content-center">
+                    <div class="col-11">
+                        <label for="description">Description:</label>
+                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter the description here" required></textarea>
+                    </div>
+                </div>
 
-            <!-- Instruction -->
-            <label for="instructions" class="form-label">Instructions:</label>
-            <textarea class="form-control" id="instructions" name="instructions" rows="10" placeholder="Enter instructions here" required></textarea>
+                <!-- Ingredient details -->
+                <div class="row justify-content-center">
+                    <div class="col-11" id="ingredient-container">
+                        <!-- Any changes to this fieldset need to be made in addIngredient.js as well -->
+                        <fieldset id="ingredient-data1">
+                            <label for="ingredient1" class="form-label">Ingredient:</label>
+                            <div class="row">
+                                <div class="col-11">
+                                    <input class="form-control" list="datalistOptions" id="ingredient1" name="name" placeholder="Type to search ingredient...">
+                                </div>
+                            </div>
+                            <datalist id="datalistOptions">
+                                {{#each ingredients as |ingredient|}}
+                                    <option value="{{ingredient.name}}"></option>
+                                {{/each}}
+                            </datalist>
+                            <div class="row">
+                                <div class="col-6 col-sm-4">
+                                    <input class="form-control" id="amount1" type="text" name="amount" placeholder="Amount" required/>  
+                                </div>
+                                <div class="col-6 col-sm-4">
+                                    <input class="form-control" id="unit1" type="text" name="measurement_unit" placeholder="Unit"/>
+                                </div>
+                                
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
 
-            <!-- Submit button -->                  
-            <div class="text-center">
-                <button id="submit-btn">Submit Recipe</button>
-            </div>
-        </form>
+                <!-- Add ingredient button-->
+                <div class="m-4">
+                   <div class="d-inline">
+                        <button class="col"id="add-btn">+</button>
+                    </div>
+                    <p class="d-inline orange-el">Add ingredient</p>
+                </div>
+
+                <!-- Instruction -->
+                <div class="row justify-content-center">
+                    <div class="col-11">
+                        <label for="instructions">Instructions:</label>
+                    <textarea class="form-control" id="instructions" name="instructions" rows="10" placeholder="Enter instructions here" required></textarea>
+                    </div>
+                </div>
+
+                <!-- Submit button -->                  
+                <div class="row justify-content-center">
+                   <div class="col-10 col-sm-8  m-4 text-center">
+                     <button id="submit-btn">Submit Recipe</button>
+                   </div>
+                </div>
+            </form>
+        </div>
     </div>
-</main>
+</div>
 
 <div class="modal" id="success-modal" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">

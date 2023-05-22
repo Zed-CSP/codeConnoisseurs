@@ -1,30 +1,29 @@
-<div class="container-fluid">
-    <div id="login-row" class="row bg-image1 vh-100-custom">
-        <header class="col-lg-4 col-12">
-            <div id="login-title" class="m-5">
-                <img src="../images/logo.png" alt="Drawing of a carrot character with a chef's hat and spoon">
-                <h1 id="title">Kitchen Alchemy</h1>
-            </div>
-            
-            <p class="m-5" id="intro">At Kitchen Alchemy, we believe that everyone has a hidden culinary genius within them. That's why we provide you with a platform to submit and share your own recipes, allowing others to marvel at your culinary creations. But it doesn't stop there. Our platform goes beyond traditional recipe sharing by offering a unique feature&mdash;the ability to explore and cook with the ingredients you already have in your pantry.</p>
-        </header>
+<div class="row">
+    <header class="col-4 vh-100">
+        
+        <div class="m-5">
+            <img  src="../images/logo.png" alt="Logo">
+            <h1 id="title">Kitchen</h1>
+            <h1 id="title">Alchemy</h1>
+        </div>
+        
+        <p class="m-5" id="intro">At Kitchen Alchemy, we believe that everyone has a hidden culinary genius within them. That's why we provide you with a platform to submit and share your own recipes, allowing others to marvel at your culinary creations. But it doesn't stop there. Our platform goes beyond traditional recipe sharing by offering a unique feature – the ability to explore and cook with the ingredients you already have in your pantry.</p>
+    </header>
 
-        <main class="col-lg-8 col-12 d-flex justify-content-center align-items-center">
-            <div class="green-box" id="login-box">
-                <h2 class="text-center mb-3 h1">Log In</h2>
-                <form id="login-form">
-                    <input class="form-control" id="email-login" type="text" name="email-login" placeholder="Email address" required />
-                    <input class="form-control" id="password-login" type="password" name="password-login" placeholder="Password" minlength="8" required />
-                    <div class="row justify-content-center">
-                        <div class="col text-center">
-                            <button >Log In</button>
-                        </div>
+    <main class="col vh-100 bg-image1 d-flex justify-content-center align-items-center" >
+        <div class="green-box" id="log-in">
+            <form id="login-form">
+                <input class= "row" id="email-login" type="text" name="email-login" placeholder="Email address" required />
+                <input class= "row" id="password-login" type="password" name="password-login" placeholder="Password" minlength="8" required />
+                <div class="row justify-content-center">
+                    <div class="col text-center">
+                        <button >Log In</button>
                     </div>
-                    <a class="row justify-content-center orange-el" href="/signup">Create a new account</a>
-                </form>
-            </div>
-        </main>
-    </div>
+                </div>
+                <a class= "row justify-content-center orange-el" href="/signup">Create a new account</a>
+            </form>
+        </div>
+    </main>
 </div>
 
 <script src="/js/login.js"></script>
