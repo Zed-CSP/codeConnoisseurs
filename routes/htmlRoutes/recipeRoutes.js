@@ -28,7 +28,7 @@ router.get('/add', async (req, res) => {
     }
 });
 
-router.get('/recipe/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const recipeData = await Recipe.findByPk(req.params.id, {
             include: [ 
@@ -43,7 +43,6 @@ router.get('/recipe/:id', async (req, res) => {
             ],
         });
         const recipe = recipeData.get({ plain: true });
-        console.log(recipe);
         res.render('view-recipe', {
             recipe,
             showNav: true,
