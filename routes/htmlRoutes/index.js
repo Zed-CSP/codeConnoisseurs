@@ -56,6 +56,22 @@ router.get('/home', async (req, res) => {
     }
 });
 
+// Redirect /profile to the logged in user's profile
+router.get('/profile', async (req, res) => {
+    try {
+        // If user is logged in
+        if (req.session.logged_in) {
+            // Redirect to their profile using their id
+            res.redirect(`/profile/${req.session.user_id}`);
+        // If not logged in go to login screen
+        } else {
+            res.redirect('/');
+        }
+    } catch (error) {
+        res.status(500).json({ error });
+    }
+});
+
 // Render page to view feed of all Recipes for User
 router.get('/profile/:id', async (req, res) => {
     try {
