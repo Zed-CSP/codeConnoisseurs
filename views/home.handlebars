@@ -19,7 +19,7 @@
         <h5 class="modal-title">Search By Ingredient</h5>
       </div>
       <div class="modal-body">
-        <select id="ingredient-select">
+        <select name="ingredient-select" id="ingredient-select">
             {{#each ingredients as |ingredient|}}
                 <option value="{{ingredient.id}}">{{ingredient.name}}</option>
             {{/each}}
