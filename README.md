@@ -56,7 +56,10 @@
   ## Credits
   Welcome email template created using [Stripo.email](https://stripo.email/).
   
-  Background images sourced from _____________
+  Background images sourced from 
+  https://vitalityadvocates.com/wp-content/uploads/2016/09/2-essential-ingredients.jpg
+  https://www.colourbox.com/image/food-ingredients-meat-vegetables-and-spices-image-22571177
+  https://photodune.net/item/flatlay-of-preparation-pastry-homemade-recipe-for-bake/20123453
 
   Tutorials/resources referenced:
   - Stack Overflow - [Why does using async-await in map function still return promises and not the resolved values?](https://stackoverflow.com/questions/65655885/why-does-using-async-await-in-map-function-still-return-promises-and-not-the-res)
