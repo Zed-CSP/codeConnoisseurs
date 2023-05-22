@@ -12,4 +12,24 @@
     </section>
 </main>
 
+<div class="modal" id="ingredient-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Search By Ingredient</h5>
+      </div>
+      <div class="modal-body">
+        <select id="ingredient-select">
+            {{#each ingredients as |ingredient|}}
+                <option value="{{ingredient.id}}">{{ingredient.name}}</option>
+            {{/each}}
+        <div id="modal-btns">
+            <a class="btn" href="*something else*">Search</a>
+            <a class="btn" href="/home">View All Recipes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="/js/home.js"></script>
