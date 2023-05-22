@@ -197,9 +197,16 @@ textarea {
     font-weight: bold;
 }
 
+.mg-cus-nav {
+    margin-top: 230px;
+}
+
 @media (max-width: 375px) {
     .vh-130{
         height: 170vh;
+    }
+    .mg-cus-nav {
+        margin-top: 280px;
     }
 }
 
@@ -207,3 +214,4 @@ textarea {
     font-size: 25px;
     color: var(--dark-green);
 }
+
