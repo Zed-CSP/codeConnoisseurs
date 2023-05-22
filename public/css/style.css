@@ -170,11 +170,8 @@ textarea {
     font-style: italic;
 }
 
-.post-card {
+.feed.post-card:hover {
     cursor: pointer;
-}
-
-.post-card:hover {
     background-color: var(--hover-green);
     color: var(--orange);
     box-shadow: black 0px 0px 10px;
