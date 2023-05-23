@@ -221,3 +221,8 @@ textarea {
     color: var(--dark-green);
 }
 
+@media (max-height: 930px) {
+    .vh-130 {
+        height:180vh;
+    }
+}
