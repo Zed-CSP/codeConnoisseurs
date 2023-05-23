@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let hasIngredient = false;
       const cardIngredients = card.querySelectorAll('.ingredient');
       cardIngredients.forEach((ingredient) => {
-        // console.log(ingredient.getAttribute('data-value'));
+        console.log(ingredient.getAttribute('data-value'));
         if (checkedBtnArr.includes(ingredient.getAttribute('data-value'))) {
           hasIngredient = true;
         }
