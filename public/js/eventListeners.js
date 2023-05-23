@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
          </button>
        </div>
        <div class="modal-body">
-         <p>words</p>
+         <p>Ingredients</p>
        </div>
        <div class="modal-footer">
          <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
@@ -119,7 +119,20 @@ document.addEventListener('DOMContentLoaded', () => {
         card.classList.add('hidden');
       }
     });
+    return;
   }
+
+  //add event listener to user cards
+  const newPosts = document.querySelectorAll('.post-card');
+  
+  newPosts.forEach((card) => {
+    card.addEventListener('click', () => {
+      const postId = card.id;
+      // ADD ROUTE TO POST PAGE
+      console.log('Clicked on post:', postId);
+      window.location.href = `/recipe/${postId}`;
+    });
+  });
 
 });
 
@@ -129,4 +142,5 @@ const showAllPostCards = () => {
   postCards.forEach((card) => {
     card.classList.remove('hidden');
   });
+  
 }
