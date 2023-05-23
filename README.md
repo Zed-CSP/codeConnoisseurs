@@ -26,6 +26,8 @@
   * Visit the [Kitchen Alchemy](https://kitchen-alchemy.herokuapp.com/) site to login or create a new account.
   * Landing Page
   ![Preview](./public/images/deployed-screenshot.png)
+  * Create a new account and receive a welcome email.
+  ![Preview](./public/images/welcome-email.png)
   * After logging in, you can view recipes in the feed or recipes you have created.
   * Sample Recipe
   ![Preview](./public/images/sample-recipe.png)
