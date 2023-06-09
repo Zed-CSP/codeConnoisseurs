@@ -51,7 +51,7 @@
 ---
 
   ## Contributors
-  "[Rebecca Roos](https://github.com/sendusyourbones)", "[Riley O'Neil](https://github.com/rileydoneil)", "[Christopher Peret](https://github.com/Zed-CSP)", "[Phuong To](https://github.com/phuongtoVN)", and "[Sarah Jensen](https://github.com/sarah-jensen)".
+  [Rebecca Roos](https://github.com/sendusyourbones), [Riley O'Neil](https://github.com/rileydoneil), [Christopher Peret](https://github.com/Zed-CSP), [Phuong To](https://github.com/phuongtoVN), and [Sarah Jensen](https://github.com/sarah-jensen).
 
 ---
 
